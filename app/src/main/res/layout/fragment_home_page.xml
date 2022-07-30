@@ -12,87 +12,131 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/pink"
-        app:title="Home">
+        app:title="Home Page">
 
     </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="279dp"
+            android:layout_height="55dp"
+            android:hint="Enter the product you are looking for"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/btn_shoppingcart"
+            android:layout_width="40dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center_horizontal"
+            app:fabCustomSize="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/editText2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.47"
+            app:maxImageSize="30dp"
+            app:srcCompat="@drawable/ic_shoppingcart" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="32dp"
+            android:layout_height="29dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/editText2"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="@color/pink"
-            android:contentDescription="@string/action_search"
-            app:fabCustomSize="40dp"
-            app:maxImageSize="25dp"
-            app:srcCompat="@drawable/ic_search" />
-
-        <EditText
-            android:layout_width="270dp"
-            android:layout_height="match_parent"
-            android:hint="Enter the product you are looking for"
-            android:textSize="15dp"/>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_shoppingcart"
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            app:fabCustomSize="40dp"
-            app:maxImageSize="30dp"
-            app:srcCompat="@drawable/ic_shoppingcart" />
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp">
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/txt_appname"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/app_name"
-        android:textColor="@color/black"
-        android:textSize="30sp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/grey">
+
+        <TextView
+            android:id="@+id/txt_appname"
+            android:layout_width="294dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="2dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="222dp"
+            android:layout_height="115dp"
+            android:layout_marginTop="28dp"
+            android:src="@drawable/img_marketing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="100dp">
+
         <LinearLayout
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_width="103dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
             android:gravity="center"
-            android:layout_marginLeft="20dp">
+            android:orientation="vertical">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/imgBtn_deals"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:fabCustomSize="70dp"
                 app:maxImageSize="50dp"
-                app:srcCompat="@drawable/ic_deal" />
+                app:srcCompat="@drawable/ic_deal"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Deals"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="10dp">
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btn_brand"
                 android:layout_width="70dp"
@@ -100,23 +144,25 @@
                 android:layout_marginLeft="15dp"
                 app:fabCustomSize="70dp"
                 app:maxImageSize="70dp"
-                app:srcCompat="@drawable/ic_brand" />
+                app:srcCompat="@drawable/ic_brand"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Brand"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="end"
-            android:layout_marginRight="10dp">
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/imgBtn_category"
                 android:layout_width="70dp"
@@ -124,13 +170,15 @@
                 android:layout_marginLeft="15dp"
                 app:fabCustomSize="70dp"
                 app:maxImageSize="50dp"
-                app:srcCompat="@drawable/ic_category"/>
+                app:srcCompat="@drawable/ic_category"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Category"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -143,7 +191,8 @@
 
         <GridView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/grey">
 
         </GridView>
 
