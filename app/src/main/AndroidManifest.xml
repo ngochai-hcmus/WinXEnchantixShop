@@ -32,12 +32,6 @@
             android:name=".Activity.Product.ProductInformationActivity"
             android:exported="false" />
         <activity
-            android:name=".Fragment.CustomerPageFragment"
-            android:exported="false" />
-        <activity
-            android:name=".Fragment.HomePageFragment"
-            android:exported="false" />
-        <activity
             android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
