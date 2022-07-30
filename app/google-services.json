@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "755457436187",
+    "project_id": "winxenchantixshop-c3794",
+    "storage_bucket": "winxenchantixshop-c3794.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755457436187:android:032d01da3ad71079a7e6be",
+        "android_client_info": {
+          "package_name": "com.example.winxenchantixshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755457436187-mc4dus93kk6ts68bhksjjklhuruarpb6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC59Sg7d0SsbDSTiHeScdnhIWdmVg4JIX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755457436187-mc4dus93kk6ts68bhksjjklhuruarpb6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
