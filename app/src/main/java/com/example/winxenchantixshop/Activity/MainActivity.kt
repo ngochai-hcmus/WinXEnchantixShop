@@ -1,7 +1,8 @@
-package com.example.winxenchantixshop
+package com.example.winxenchantixshop.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.winxenchantixshop.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

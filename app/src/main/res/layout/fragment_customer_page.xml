@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragment.CustomerPageFragment">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/infouser"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/pink"
+        app:title="Information">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/img_ava"
+        android:layout_width="123dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        app:srcCompat="@drawable/ava" />
+
+    <TextView
+        android:id="@+id/txt_username"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="User name" />
+
+    <TextView
+        android:id="@+id/txt_myorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="My order"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+
+    <FrameLayout
+        android:id="@+id/frame1"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:id="@+id/img_confirm"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity=""
+            android:layout_marginLeft="50dp"
+            app:srcCompat="@drawable/ic_confirm" />
+
+        <ImageView
+            android:id="@+id/img_ship"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/ic_shipped" />
+
+        <ImageView
+            android:id="@+id/img_feedback"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:layout_marginRight="40dp"
+            app:srcCompat="@drawable/ic_feedback" />
+
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">WinXEnchantixShop</string>
+    <string name="action_home">Home</string>
+    <string name="action_notice">Notice</string>
+    <string name="action_chat">Chat</string>
+    <string name="action_user">User</string>
+    <string name="action_search">Search</string>
+    <string name="phone">Phone</string>
 </resources>
