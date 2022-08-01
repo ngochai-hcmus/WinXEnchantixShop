@@ -184,16 +184,9 @@
 
     </FrameLayout>
 
-    <RelativeLayout
-        android:id="@+id/layout2"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView_list_product"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-
-    </RelativeLayout>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
