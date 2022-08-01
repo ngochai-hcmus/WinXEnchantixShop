@@ -1,128 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".Activity.Product.PostProductActivity"
     android:orientation="vertical"
-    tools:context=".Fragment.CustomerPageFragment">
+    android:gravity="center">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/infouser"
+        android:id="@+id/edit_product_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="@color/pink"
-        app:title="Edit Profile"></androidx.appcompat.widget.Toolbar>
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:title="Edit Profile" />
 
     <FrameLayout
-        android:id="@+id/frame2"
+        android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
-        android:layout_height="123dp"
-        android:layout_marginTop="5dp">
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.142">
 
         <ImageView
-            android:id="@+id/edit_ava"
-            android:layout_width="123dp"
-            android:layout_height="100dp"
+            android:id="@+id/product_img"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/ava" />
+            android:background="@color/grey" />
+        <Button
+            android:id="@+id/btn_edit_ava"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="15dp"
+            android:text="edit"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_edit"
+            tools:ignore="TouchTargetSizeCheck" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_add_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_add_image"
+            app:fabCustomSize="80dp"
+            app:maxImageSize="70dp"
+            tools:ignore="SpeakableTextPresentCheck">
 
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/edit_userName"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:hint="User name"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edit_name"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_name"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="355dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="40dp"
-        android:background="@color/grey"
+        android:layout_margin="20dp"
         android:hint="Name"
-        android:inputType="textEmailAddress"
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusTopStart="12dp"
-        app:icon="@drawable/ic_edit" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.382"
+        app:startIconDrawable="@drawable/id_name">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edit_age"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="264dp"
+            android:background="@color/grey"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_category"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="355dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:background="@color/grey"
+        android:layout_margin="20dp"
         android:hint="Age"
-        android:inputType="textEmailAddress"
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusTopStart="12dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
+        app:startIconDrawable="@drawable/ic_age">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edit_address"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText_age"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="340dp"
+            android:background="@color/grey"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_address"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="355dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:background="@color/grey"
+        android:layout_margin="20dp"
         android:hint="Address"
-        android:inputType="textEmailAddress"
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusTopStart="12dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.61"
+        app:startIconDrawable="@drawable/ic_house">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edit_phone"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_phone"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="355dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:background="@color/grey"
+        android:layout_margin="20dp"
         android:hint="Phone"
-        android:inputType="textEmailAddress"
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusTopStart="12dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.727"
+        app:startIconDrawable="@drawable/ic_phone"
+        android:background="@color/grey">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edit_email"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_description"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="355dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:background="@color/grey"
+        android:layout_margin="20dp"
         android:hint="Email"
-        android:inputType="textEmailAddress"
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusTopStart="12dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.841"
+        app:startIconDrawable="@drawable/ic_email"
+        android:background="@color/grey">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="224dp"
-        android:layout_height="45dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:text="Up Date"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        android:id="@+id/btn_post"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textColor="#FF000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.762"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
+
+    <Button
+
+        android:id="@+id/btn_cancel"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Cancel"
+        android:textColor="#FF000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.989" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
