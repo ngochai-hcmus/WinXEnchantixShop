@@ -10,15 +10,14 @@
         android:id="@+id/register_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="64dp"
         android:text="Create Account,"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/register_sub"
@@ -134,7 +133,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="188dp"
         android:layout_marginEnd="30dp"
         android:background="@color/pink"
         android:text="Register"
@@ -150,7 +149,7 @@
         android:id="@+id/text_already_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="36dp"
         android:text="I'm already a member, "
         android:textColor="@color/black"
         android:textSize="17sp"
@@ -163,7 +162,7 @@
         android:id="@+id/btn_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="36dp"
         android:clickable="true"
         android:text="Sign In"
         android:textColor="#d85e89"
