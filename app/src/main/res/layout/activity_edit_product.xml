@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragment.CustomerPageFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/infouser"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/pink"
+        app:title="Edit Product">
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:id="@+id/frame2"
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:id="@+id/edit_ava"
+            android:layout_width="123dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ava" />
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/edit_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:hint="Product name"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_name_product"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="40dp"
+        app:icon="@drawable/ic_edit"
+        android:hint="Product name"
+        android:background="@color/grey"
+        android:inputType="textEmailAddress" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_category_product"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:hint="Category"
+        android:background="@color/grey"
+        android:inputType="textEmailAddress" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_price_product"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:hint="Price"
+        android:background="@color/grey"
+        android:inputType="textEmailAddress" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_amount_product"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:hint="Amount"
+        android:background="@color/grey"
+        android:inputType="textEmailAddress" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_description_product"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:hint="Description"
+        android:background="@color/grey"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="224dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="Up Date" />
+
+
+</LinearLayout>
