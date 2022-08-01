@@ -13,19 +13,21 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_post_product)
 
-        //BottomNavigationView + Fragment
-        supportFragmentManager.beginTransaction().replace(R.id.frame_layout,HomePageFragment()).commit()
-        val bottomNav : BottomNavigationView = findViewById(R.id.bottomNavigationView)
-        bottomNav.setOnItemSelectedListener {
-            when(it.itemId){
-                R.id.home ->  {currentFragment = HomePageFragment()}
-                R.id.user -> {currentFragment = CustomerPageFragment()}
-            }
-            supportFragmentManager.beginTransaction().replace(R.id.frame_layout,currentFragment).commit()
-            true
-        }
+//        //BottomNavigationView + Fragment
+//        supportFragmentManager.beginTransaction().replace(R.id.frame_layout,HomePageFragment()).commit()
+//        val bottomNav : BottomNavigationView = findViewById(R.id.bottomNavigationView)
+//        bottomNav.setOnItemSelectedListener {
+//            when(it.itemId){
+//                R.id.home ->  {currentFragment = HomePageFragment()}
+//                R.id.user -> {currentFragment = CustomerPageFragment()}
+//            }
+//            supportFragmentManager.beginTransaction().replace(R.id.frame_layout,currentFragment).commit()
+//            true
+//        }
+
+
 
     }
 }

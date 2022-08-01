@@ -189,12 +189,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <GridView
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/grey">
-
-        </GridView>
+            android:layout_height="match_parent"/>
 
 
     </RelativeLayout>
