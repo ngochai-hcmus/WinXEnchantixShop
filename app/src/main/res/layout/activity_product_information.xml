@@ -61,7 +61,7 @@
 
         <ImageView
             android:id="@+id/imgproduct"
-            android:layout_width="220dp"
+            android:layout_width="195dp"
             android:layout_height="180dp"
             android:layout_margin="10dp" />
 
@@ -85,7 +85,7 @@
                     android:backgroundTint="#f7bacf"
                     android:text="-"
                     android:textColor="#FF000000"
-                    android:textSize="13sp" />
+                    android:textSize="25dp" />
 
                 <TextView
                     android:id="@+id/number"
@@ -109,7 +109,7 @@
                     android:text="+"
                     android:textAlignment="center"
                     android:textColor="#FF000000"
-                    android:textSize="13sp" />
+                    android:textSize="20dp" />
 
             </FrameLayout>
 

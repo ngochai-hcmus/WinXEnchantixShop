@@ -1,6 +1,7 @@
 package com.example.winxenchantixshop.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.view.LayoutInflater
@@ -9,7 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.winxenchantixshop.Activity.Product.ProductInformationActivity
 import com.example.winxenchantixshop.DTO.Product
 import com.example.winxenchantixshop.R
 import com.squareup.picasso.Picasso
@@ -32,6 +36,16 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
         holder.price.text = currentItem.price
         holder.describe.text = currentItem.desciption
 
+        holder.itemView.setOnClickListener(object :View.OnClickListener{
+            override fun onClick(v:View?) {
+                val activity = v!!.context as AppCompatActivity
+                val intent = Intent(v.context,ProductInformationActivity::class.java)
+
+                activity.startActivity(intent)
+            }
+        })
+
+
     }
 
     override fun getItemCount(): Int {
@@ -46,6 +60,7 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
 
     }
 
+
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         val imageProduct : ImageView = itemView.findViewById(R.id.img_product)
@@ -53,6 +68,8 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
         val price : TextView = itemView.findViewById(R.id.text_price)
         val describe : TextView = itemView.findViewById(R.id.text_describe)
 
+
     }
+
 
 }

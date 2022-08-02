@@ -178,7 +178,7 @@
         android:id="@+id/type_seller"
         android:layout_width="93dp"
         android:layout_height="31dp"
-        android:layout_onClick="checkBtn"
+
         android:text="Seller"
         app:layout_constraintBottom_toTopOf="@+id/type_customer"
         app:layout_constraintEnd_toEndOf="parent"
@@ -192,7 +192,7 @@
         android:id="@+id/type_customer"
         android:layout_width="110dp"
         android:layout_height="33dp"
-        android:layout_onClick="checkBtn"
+
         android:checked="true"
         android:text="Customer"
         app:layout_constraintBottom_toTopOf="@+id/register_button"

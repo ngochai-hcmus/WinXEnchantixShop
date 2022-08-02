@@ -1,5 +1,6 @@
 package com.example.winxenchantixshop.Fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.winxenchantixshop.Activity.Product.ProductInformationActivity
 import com.example.winxenchantixshop.Adapter.ProductAdapter
 import com.example.winxenchantixshop.DTO.Product
 import com.example.winxenchantixshop.DTO.ProductView
@@ -65,6 +67,7 @@ class HomePageFragment : Fragment() {
         })
 
     }
+
 
 
             
