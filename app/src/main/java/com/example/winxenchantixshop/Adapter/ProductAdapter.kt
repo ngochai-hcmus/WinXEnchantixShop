@@ -36,10 +36,21 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
         holder.price.text = currentItem.price
         holder.describe.text = currentItem.desciption
 
+        val imageProduct = currentItem.imageUrl
+        val category = currentItem.category
+        val amount = currentItem.amount
+
         holder.itemView.setOnClickListener(object :View.OnClickListener{
             override fun onClick(v:View?) {
                 val activity = v!!.context as AppCompatActivity
                 val intent = Intent(v.context,ProductInformationActivity::class.java)
+
+                intent.putExtra("imageUrl", imageProduct)
+                intent.putExtra("productName", holder.productName.text)
+                intent.putExtra("category", category)
+                intent.putExtra("price", holder.price.text)
+                intent.putExtra("amount", amount)
+                intent.putExtra("description", holder.describe.text)
 
                 activity.startActivity(intent)
             }
