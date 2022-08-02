@@ -40,6 +40,7 @@
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:background="@color/grey" />
+
         <Button
             android:id="@+id/btn_edit_ava"
             style="@style/Widget.MaterialComponents.Button.TextButton"
