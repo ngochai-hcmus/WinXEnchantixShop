@@ -6,12 +6,14 @@
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_confirm.xml" value="0.25416666666666665" />
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_list_chat.xml" value="0.25416666666666665" />
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_load_login.xml" value="0.25416666666666665" />
-        <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_load_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_load_register.xml" value="0.264" />
+        <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_notification.xml" value="0.25416666666666665" />
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_order.xml" value="0.264" />
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_order_history.xml" value="0.25416666666666665" />
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_turn_into.xml" value="0.25416666666666665" />
+        <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_verify_otp.xml" value="0.25416666666666665" />
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/fragment_home_page.xml" value="0.136" />
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/fragment_home_page_seller.xml" value="0.25416666666666665" />
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/item_cart.xml" value="0.25416666666666665" />
