@@ -31,7 +31,7 @@ class LoadRegisterActivity : AppCompatActivity() {
         val email = intent.getStringExtra("Email")
         type = "seller"
         n = email.toString()
-        val account = Account(n.toString(),type)
+        val account = Account(n.toString(),type,"","","","")
         val nchild = n.subSequence(0,n.length-10).toString()
         database.child(nchild.toString()).setValue(account).addOnSuccessListener {
 
