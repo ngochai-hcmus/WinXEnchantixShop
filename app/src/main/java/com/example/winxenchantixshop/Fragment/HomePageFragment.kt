@@ -11,11 +11,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.winxenchantixshop.Activity.Product.ProductInformationActivity
+import com.example.winxenchantixshop.Activity.Product.SearchActivity
 import com.example.winxenchantixshop.Adapter.ProductAdapter
 import com.example.winxenchantixshop.DTO.Product
 import com.example.winxenchantixshop.DTO.ProductView
 import com.example.winxenchantixshop.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,7 +26,8 @@ private const val ARG_PARAM2 = "param2"
 private lateinit var viewModel : ProductView
 private lateinit var productAdapter : ProductAdapter
 private lateinit var productRecyclerView: RecyclerView
-
+private lateinit var listProduct: ArrayList<Product>
+private lateinit var btnSearch: FloatingActionButton
 
 class HomePageFragment : Fragment() {
 
@@ -56,7 +58,9 @@ class HomePageFragment : Fragment() {
         productRecyclerView = view.findViewById(R.id.recycleView_list_product)
         productRecyclerView.layoutManager = LinearLayoutManager(context)
         productRecyclerView.setHasFixedSize(true)
-        productAdapter = ProductAdapter()
+
+        listProduct = arrayListOf<Product>()
+        productAdapter = ProductAdapter(listProduct)
         productRecyclerView.adapter = productAdapter
 
         viewModel = ViewModelProvider(this).get(ProductView::class.java)
@@ -66,8 +70,13 @@ class HomePageFragment : Fragment() {
             productAdapter.updateProductList(it)
         })
 
-    }
+        btnSearch = view.findViewById(R.id.btn_search)
+        btnSearch.setOnClickListener{
+            val intent = Intent(this@HomePageFragment.requireContext(), SearchActivity::class.java)
+            startActivity(intent)
+        }
 
+    }
 
 
             

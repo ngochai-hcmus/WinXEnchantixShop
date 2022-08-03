@@ -72,8 +72,6 @@ class SearchActivity : AppCompatActivity() {
         listProduct = arrayListOf<Product>()
         getProduct()
 
-
-
     }
 
     private fun getProduct() {

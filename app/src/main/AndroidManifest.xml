@@ -37,18 +37,24 @@
         <activity
             android:name=".Activity.Product.ProductInformationActivity"
             android:exported="false" />
-
         <activity
             android:name=".Activity.Product.PostProductActivity"
-            android:exported="false">
-<!--        <intent-filter>-->
-<!--            <action android:name="android.intent.action.MAIN" />-->
+            android:exported="true">
 
-<!--            <category android:name="android.intent.category.LAUNCHER" />-->
-<!--        </intent-filter>-->
         </activity>
 
+        <activity
+            android:name=".Activity.Product.SearchActivity"
+            android:exported="false">
 
+<!--             <intent-filter>-->
+<!--             <action android:name="android.intent.action.MAIN" />-->
+
+
+<!--             <category android:name="android.intent.category.LAUNCHER" />-->
+<!--             </intent-filter>-->
+
+        </activity>
         <activity
             android:name=".Activity.MainActivity"
             android:exported="true">

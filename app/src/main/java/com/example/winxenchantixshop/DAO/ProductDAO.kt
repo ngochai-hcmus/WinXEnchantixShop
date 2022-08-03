@@ -35,7 +35,7 @@ class ProductDAO {
     }
 
 
-    fun loadProducts(productList : MutableLiveData<List<Product>>){
+    fun loadProducts(userList : MutableLiveData<List<Product>>){
 
         databaseRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -45,18 +45,26 @@ class ProductDAO {
                     val _productList : List<Product> = snapshot.children.map { dataSnapshot ->
 
                         dataSnapshot.getValue(Product::class.java)!!
+
                     }
 
-                    productList.postValue(_productList)
+                    userList.postValue(_productList)
 
                 }catch (e : Exception){
 
                 }
+
             }
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
+
+
         })
+
+
     }
+
+
 }
