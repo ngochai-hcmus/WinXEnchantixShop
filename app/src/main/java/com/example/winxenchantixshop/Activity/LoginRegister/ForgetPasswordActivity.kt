@@ -13,7 +13,6 @@ import com.google.firebase.auth.FirebaseAuth
 class ForgetPasswordActivity : AppCompatActivity() {
     private lateinit var binding : ActivityForgetPasswordBinding
     private lateinit var database: DatabaseReference
-    private lateinit var firebaseAuth: FirebaseAuth
 
     lateinit var email : String
     lateinit var type : String
@@ -24,7 +23,6 @@ class ForgetPasswordActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         database = FirebaseDatabase.getInstance().getReference("Account")
-        firebaseAuth = FirebaseAuth.getInstance()
 
         binding.forgotPswMailButton.setOnClickListener {
             email =  binding.forgotPswMailInput.editText?.text.toString()
