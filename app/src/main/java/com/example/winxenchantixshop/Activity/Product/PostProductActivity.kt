@@ -53,7 +53,7 @@ class PostProductActivity : AppCompatActivity() {
         binding.btnAddImg.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery,pickImage)
-            binding.btnAddImg.hide()
+            //binding.btnAddImg.hide()
         }
 
         binding.btnPost.setOnClickListener{

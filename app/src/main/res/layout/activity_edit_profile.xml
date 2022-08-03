@@ -41,27 +41,15 @@
             android:layout_gravity="center"
             android:background="@color/grey" />
 
-        <Button
-            android:id="@+id/btn_edit_ava"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="39dp"
-            android:layout_marginLeft="300dp"
-            android:layout_marginTop="15dp"
-            android:text="edit"
-            android:textColor="@color/black"
-            app:icon="@drawable/ic_edit"
-            tools:ignore="TouchTargetSizeCheck" />
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_add_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="250dp"
             android:src="@drawable/ic_add_image"
             app:fabCustomSize="80dp"
-            app:maxImageSize="70dp"
-            tools:ignore="SpeakableTextPresentCheck">
+            app:maxImageSize="70dp">
 
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
     </FrameLayout>

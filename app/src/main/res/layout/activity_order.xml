@@ -34,21 +34,25 @@
             android:textStyle="bold|italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
             android:id="@+id/btn_next"
-            android:layout_width="22dp"
-            android:layout_height="25dp"
+            android:layout_width="29dp"
+            android:layout_height="34dp"
             android:layout_marginStart="373dp"
             android:layout_marginEnd="16dp"
             android:background="@color/grey"
-            android:src="@drawable/ic_next"
+            android:src="@drawable/ic_edit_shipping_address"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.333" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -132,50 +136,17 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/text_nameShop"
-            android:layout_width="402dp"
-            android:layout_height="31dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="10dp"
-            android:paddingLeft="45dp"
-            android:text="\tName Shop"
-            android:textColor="#6B6B6C"
-            android:textSize="20dp"
-            android:textStyle="italic|bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <ImageView
-            android:id="@+id/imageV2"
-            android:layout_width="30dp"
-            android:layout_height="27dp"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/ic_shoppingcart"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/text_nameShop"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/text_nameShop"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.529" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content"/>
 
 
     <RelativeLayout
         android:id="@+id/layout2"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="170dp">
 
         <GridView
             android:layout_width="match_parent"
-            android:layout_height="100dp"></GridView>
+            android:layout_height="match_parent"></GridView>
     </RelativeLayout>
 
     <TextView
@@ -263,22 +234,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Online Paymet " />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/grey"
-        android:paddingLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="\tTatol Payment"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_Oder"
