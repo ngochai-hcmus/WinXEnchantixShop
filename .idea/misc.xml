@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_confirm.xml" value="0.25416666666666665" />
+        <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_list_chat.xml" value="0.25416666666666665" />
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_load_login.xml" value="0.25416666666666665" />
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_load_register.xml" value="0.25416666666666665" />
         <entry key="..\:/projects/WinXEnchantixShop/app/src/main/res/layout/activity_notification.xml" value="0.25416666666666665" />
@@ -21,4 +22,5 @@
       </map>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
