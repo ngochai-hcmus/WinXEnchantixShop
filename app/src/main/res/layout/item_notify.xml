@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height= "30dp">
+
+        <TextView
+            android:id="@+id/text_order_info1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:paddingBottom="5dp"
+            android:text="Order information:"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_product_name1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="35dp"
+        android:text="Product name:"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/text_amount1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Amount:"
+        android:textSize="17sp"
+        android:layout_marginLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/text_date1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        android:text="Date:"
+        android:textSize="17sp"
+        android:layout_marginLeft="15dp"
+        android:maxLines="3"/>
+
+</androidx.cardview.widget.CardView>
