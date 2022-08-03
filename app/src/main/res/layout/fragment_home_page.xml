@@ -32,11 +32,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/btn_shoppingcart"
             android:layout_width="40dp"
             android:layout_height="38dp"
             android:layout_gravity="center_horizontal"
+            android:background="@drawable/ic_shoppingcart"
             app:fabCustomSize="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,8 +45,7 @@
             app:layout_constraintStart_toEndOf="@+id/searching_bar"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.47"
-            app:maxImageSize="30dp"
-            app:srcCompat="@drawable/ic_shoppingcart" />
+            app:maxImageSize="30dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_search"
