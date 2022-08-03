@@ -34,19 +34,19 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textview_thongbao"
+                    android:id="@+id/textview_notice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Your cart is emty!"
                     android:textSize="30sp"></TextView>
 
-                <ListView
-                    android:id="@+id/listview_gio_hang"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cycleview_gio_hang"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                </ListView>
+                </androidx.recyclerview.widget.RecyclerView>
 
             </FrameLayout>
         </LinearLayout>
