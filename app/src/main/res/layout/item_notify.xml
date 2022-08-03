@@ -10,13 +10,24 @@
     <LinearLayout
         android:id="@+id/layout1"
         android:layout_width="match_parent"
-        android:layout_height= "30dp">
-
+        android:layout_height= "30dp"
+        android:background="@color/grey">
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="32dp"
+            android:layout_height="29dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_noti"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/editText2"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
         <TextView
             android:id="@+id/text_order_info1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
+            android:layout_marginLeft="5dp"
             android:paddingBottom="5dp"
             android:text="Order information:"
             android:textColor="@color/black"
@@ -25,20 +36,20 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/text_product_name1"
+        android:id="@+id/text_user_name1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="35dp"
-        android:text="Product name:"
+        android:text="User name:"
         android:textSize="17sp" />
 
     <TextView
-        android:id="@+id/text_amount1"
+        android:id="@+id/text_total_cost1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Amount:"
+        android:text="Total cost:"
         android:textSize="17sp"
         android:layout_marginLeft="15dp"/>
 
