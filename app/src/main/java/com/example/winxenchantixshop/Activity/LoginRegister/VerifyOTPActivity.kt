@@ -13,6 +13,7 @@ class VerifyOTPActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityVerifyOtpBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.forgotPswCodeButton.setOnClickListener {
             startActivity(Intent(this, ForgetPasswordActivity::class.java))
         }

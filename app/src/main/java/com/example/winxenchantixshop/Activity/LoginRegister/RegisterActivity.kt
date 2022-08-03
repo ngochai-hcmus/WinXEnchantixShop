@@ -8,103 +8,35 @@ import androidx.appcompat.app.ActionBar
 
 import com.example.winxenchantixshop.databinding.ActivityRegisterBinding
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.auth.FirebaseAuth
-
 import android.widget.Toast
+import com.example.winxenchantixshop.Activity.Product.PostProductActivity
+import com.example.winxenchantixshop.DTO.Account
+
 
 class RegisterActivity : AppCompatActivity() {
-   /* //ViewBinding
     private lateinit var binding: ActivityRegisterBinding
-    //ActionBar
-    private lateinit var actionBar: ActionBar
-    //ProgressDialog
-    private lateinit var processDialog: ProgressDialog
-    //Firebase
     private lateinit var firebaseAuth: FirebaseAuth
 
-    //data
-    private var email = ""
-    private var password = ""
-    private var type = ""
-
+    lateinit var email : String
+    lateinit var pass : String
+    lateinit var confirmPass : String
+    lateinit var type : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //init firebase auth
-        firebaseAuth = FirebaseAuth.getInstance()
-
-        //handle click, begin register
-        binding.registerButton.setOnClickListener {
-            validateData()
+        binding.textAlreadyUser.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
-
-        binding.btnSignIn.setOnClickListener {
-            startActivity(Intent(this,LoginActivity::class.java))
-            finish()
-        }
-    }
-    private fun validateData(){
-        email = binding.registerInputFullName.editText?.text.toString()
-        password = binding.registerPswField.editText?.text.toString()
-        type = binding.registerInputEmail.editText?.text.toString()
-
-        //validate data
-            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() ){
-            binding.registerInputFullName.error = "Invalid email format"
-        }
-        else if (password.isEmpty()){
-            binding.registerPswField.error = "Please enter your password"
-            }
-        else if (password.length < 6)
-        {
-            binding.registerPswField.error = "Password must be more than 6 characters"
-        }
-        else
-        {
-            firebaseRegister()
-        }
-    }
-    private fun firebaseRegister()
-    {
-        processDialog.show()
-
-        //create account
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
-            .addOnSuccessListener {
-            //Register success
-                processDialog.dismiss()
-                val firebaseUser = firebaseAuth.currentUser
-                val email = firebaseUser!!.email
-                Toast.makeText(this, "Account create with email $email",Toast.LENGTH_SHORT).show()
-
-            //Open login
-            startActivity(Intent(this,LoginActivity::class.java))
-            finish()
-
-
-        }.addOnFailureListener {e->
-                //Register failed
-            processDialog.dismiss()
-                Toast.makeText(this,"Register Failed due to ${e.message}",Toast.LENGTH_SHORT).show()
-            }
-    }*/
-
-    private lateinit var binding: ActivityRegisterBinding
-    private lateinit var firebaseAuth: FirebaseAuth
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityRegisterBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        firebaseAuth = FirebaseAuth.getInstance()
             binding.registerButton.setOnClickListener {
-                val email = binding.registerInputEmail.editText?.text.toString()
-                val pass = binding.registerPassword.editText?.text.toString()
-                val confirmPass = binding.registerConfirmPassword.editText?.text.toString()
+                email = binding.registerInputEmail.editText?.text.toString()
+                pass = binding.registerPassword.editText?.text.toString()
+                confirmPass = binding.registerConfirmPassword.editText?.text.toString()
                 if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                     binding.registerInputEmail.error = "Invalid email format!"
                 }
@@ -120,21 +52,25 @@ class RegisterActivity : AppCompatActivity() {
                     binding.registerConfirmPassword.error = "confirm password does not match password!"
                 }
                 else{
-                    firebaseAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener {
-                        if(it.isSuccessful)
-                        {
-                            val intent = Intent(this, LoginActivity::class.java)
+                    firebaseAuth = FirebaseAuth.getInstance()
+                    firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(this) { task->
+                        if(task.isSuccessful){
+                            //move to login
+                            Toast.makeText(this, "Successful create account", Toast.LENGTH_SHORT).show()
+                            var intent = Intent(this, LoginActivity::class.java)
+                            intent.putExtra("Email",email.toString())
                             startActivity(intent)
                         }
                         else
                         {
-                            Toast.makeText(this,it.exception.toString(),Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this,"failed create email!!!",Toast.LENGTH_SHORT).show()
                         }
+                    }.addOnFailureListener {
+                        Toast.makeText(this,"failed create email!!!",Toast.LENGTH_SHORT).show()
                     }
                 }
             }
-
-
     }
 }
+
 
