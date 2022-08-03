@@ -45,7 +45,8 @@
             app:layout_constraintStart_toEndOf="@+id/searching_bar"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.47"
-            app:maxImageSize="30dp" />
+            app:maxImageSize="30dp"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_search"
