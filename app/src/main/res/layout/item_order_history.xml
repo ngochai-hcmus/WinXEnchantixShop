@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="8dp">
+
+    android:id="@+id/cartview1"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="15dp"
+    app:cardCornerRadius="8dp">
+
+    <FrameLayout
+        android:id="@+id/layout1"
+        android:background="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height= "30dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="32dp"
+            android:layout_height="29dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_account"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/editText2"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_order_info1"
+            android:layout_width="331dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:paddingBottom="5dp"
+            android:text="User name:"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_total_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="35dp"
+            android:text="Total Cost:"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/input_total_cost"
+            android:layout_width="289dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="35dp"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:layout_marginTop="60dp">
+
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Date:"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/input_date"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -23,11 +23,10 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="404dp"
+            android:layout_height="42dp"
             android:layout_marginBottom="10dp"
             android:background="@color/grey"
-            android:paddingLeft="10dp"
             android:text="\tCustomer Information"
             android:textColor="@color/black"
             android:textSize="20dp"
@@ -40,7 +39,7 @@
             app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
-            android:id="@+id/btn_next"
+            android:id="@+id/btn_edit_info"
             android:layout_width="29dp"
             android:layout_height="34dp"
             android:layout_marginStart="373dp"
@@ -56,76 +55,88 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/text_name"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="32dp"
-        android:text="\tNameUser"
-        android:textColor="#6B6B6C"
-        android:textStyle="italic"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginLeft="30dp">
 
-    <TextView
-        android:id="@+id/text_phone"
+        <TextView
+            android:id="@+id/text_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="User name:"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/input_user_name"
+            android:layout_width="277dp"
+            android:layout_height="wrap_content"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:id="@+id/text_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Phone:"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/input_Phone"
+            android:layout_width="305dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="32dp"
-        android:text="\tPhone"
-        android:textColor="#6B6B6C"
-        android:textSize="20dp"
-        android:textStyle="italic" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_marginLeft="30dp">
 
         <TextView
             android:id="@+id/text_location"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:paddingLeft="32dp"
-            android:text="\t Location"
-            android:textColor="#6B6B6C"
-            android:textSize="20dp"
-            android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Location:"
+            android:textSize="17sp" />
 
-        <ImageView
-            android:id="@+id/imageV1"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="370dp"
-            android:src="@drawable/ic_location"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/text_location"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/input_location"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"/>
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:background="@color/grey"
         android:paddingLeft="10dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
-        android:text="\tOrder Details"
+        android:text="Order Details"
+        android:layout_paddingLeft="15dp"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold|italic"
@@ -138,25 +149,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-
-    <RelativeLayout
-        android:id="@+id/layout2"
-        android:layout_width="match_parent"
-        android:layout_height="170dp">
-
-        <GridView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></GridView>
-    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView_list_product"
+        android:layout_width="365dp"
+        android:layout_height="196dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/text_total"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
         android:background="@color/grey"
         android:paddingLeft="10dp"
-        android:layout_marginEnd="5dp"
-        android:text="\tTatol Cost"
+        android:text="Tatol Cost"
+        android:layout_paddingLeft="15dp"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold|italic"
@@ -165,55 +174,84 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text_totalMoney"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="30dp"
-        android:text="\tThe Total Money"
-        android:textColor="#6B6B6C"
-        android:textStyle="italic"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="30dp">
 
-    <TextView
-        android:id="@+id/text_transpostFee"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="30dp"
-        android:text="\tTransport Fee"
-        android:textColor="#6B6B6C"
-        android:textStyle="italic"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/text_total_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Total cost:"
+            android:textSize="17sp" />
 
-    <TextView
-        android:id="@+id/text_voucher"
+        <TextView
+            android:id="@+id/input_total_cost"
+            android:layout_width="231dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:id="@+id/text_transport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Transport Fee:"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/input_transport"
+            android:layout_width="229dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="30dp"
-        android:text="\tVoucher"
-        android:textColor="#6B6B6C"
-        android:textStyle="italic"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:id="@+id/text_voucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Voucher:"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/input_voucher"
+            android:layout_width="227dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="67dp"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:background="@color/grey"
         android:paddingLeft="10dp"
-        android:layout_marginTop="10dp"
         android:text="\tPayment Method"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -223,25 +261,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/cb_directP"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Direct Payment" />
+    <RadioGroup
+        android:layout_width="374dp"
+        android:layout_height="85dp"
+        android:layout_marginLeft="35dp">
 
-    <CheckBox
-        android:id="@+id/cb_onlineP"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Online Paymet " />
+        <RadioButton
+            android:id="@+id/Btn_online_payment"
+            android:layout_width="186dp"
+            android:layout_height="38dp"
+            android:text="Online Payment"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/Btn_direct_payment"
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:text="Direct Payment"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/btn_Oder"
-        android:layout_width="match_parent"
+        android:layout_width="331dp"
         android:layout_height="41dp"
-        android:layout_margin="25dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
         android:background="@color/pink"
-        android:text="Order" />
+        android:text="Order"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
+
 
 </LinearLayout>
 
