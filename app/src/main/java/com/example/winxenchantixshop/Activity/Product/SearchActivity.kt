@@ -25,7 +25,6 @@ import kotlin.collections.ArrayList
 class SearchActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivitySearchBinding
-
     private lateinit var productRecyclerView: RecyclerView
     private lateinit var db_ref : DatabaseReference
     private lateinit var listProduct: ArrayList<Product>

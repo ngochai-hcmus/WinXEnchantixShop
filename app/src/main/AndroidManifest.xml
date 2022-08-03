@@ -36,6 +36,9 @@
         <activity
             android:name=".Activity.Product.ProductInformationActivity"
             android:exported="false" />
+        <activity
+            android:name=".Activity.Product.SearchActivity"
+            android:exported="false" />
 
         <activity
             android:name=".Activity.Product.PostProductActivity"
@@ -45,6 +48,9 @@
 <!--            <category android:name="android.intent.category.LAUNCHER" />-->
 <!--        </intent-filter>-->
         </activity>
+        <activity
+            android:name=".Activity.Cart.CartActivity"
+            android:exported="false" />
         <activity
             android:name=".Activity.MainActivity"
             android:exported="true">
