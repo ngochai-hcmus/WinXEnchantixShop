@@ -9,7 +9,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.auth.FirebaseAuth
 import android.widget.Toast
-
+import com.example.winxenchantixshop.Activity.Product.PostProductActivity
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -49,12 +49,9 @@ class RegisterActivity : AppCompatActivity() {
             else{
                 firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(this) { task->
                     if(task.isSuccessful){
-                        //move to login
-                        Toast.makeText(this, "Successful create account $email", Toast.LENGTH_SHORT).show()
-                        val helo = "hello@gmail.com"
-                        val hehe = helo
+                        Toast.makeText(this,"Successful!!!",Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, LoadRegisterActivity::class.java);
-                        intent.putExtra("Email",hehe.toString())
+                        intent.putExtra("Email", email.toString())
                         startActivity(intent)
                     }
                     else

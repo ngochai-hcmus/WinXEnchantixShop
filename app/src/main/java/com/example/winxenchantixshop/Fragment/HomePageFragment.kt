@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -13,7 +14,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.winxenchantixshop.Activity.Cart.CartActivity
-import com.example.winxenchantixshop.Activity.Product.ProductInformationActivity
 import com.example.winxenchantixshop.Activity.Product.SearchActivity
 import com.example.winxenchantixshop.Adapter.ProductAdapter
 import com.example.winxenchantixshop.DTO.Product
@@ -29,9 +29,11 @@ private const val ARG_PARAM2 = "param2"
 private lateinit var viewModel : ProductView
 private lateinit var productAdapter : ProductAdapter
 private lateinit var productRecyclerView: RecyclerView
-private lateinit var listProduct : ArrayList<Product>
-private lateinit var btn_search : FloatingActionButton
-private lateinit var btn_cart : ImageButton
+private lateinit var listProduct: ArrayList<Product>
+private lateinit var btnSearch: FloatingActionButton
+private lateinit var btnCart: ImageButton
+private lateinit var searchView: EditText
+
 
 class HomePageFragment : Fragment() {
 
@@ -62,6 +64,8 @@ class HomePageFragment : Fragment() {
         productRecyclerView = view.findViewById(R.id.recycleView_list_product)
         productRecyclerView.layoutManager = LinearLayoutManager(context)
         productRecyclerView.setHasFixedSize(true)
+
+        listProduct = arrayListOf<Product>()
         productAdapter = ProductAdapter(listProduct)
         productRecyclerView.adapter = productAdapter
 
@@ -72,15 +76,20 @@ class HomePageFragment : Fragment() {
             productAdapter.updateProductList(it)
         })
 
-        btn_search = view.findViewById(R.id.btn_search)
-        btn_search.setOnClickListener{
-            val intent = Intent(this@HomePageFragment.requireContext(),SearchActivity::class.java)
+        btnSearch = view.findViewById(R.id.btn_search)
+        searchView = view.findViewById(R.id.searching_bar)
+        val kw = searchView.text.toString()
+
+        btnSearch.setOnClickListener{
+            val intent = Intent(this@HomePageFragment.requireContext(), SearchActivity::class.java)
+            intent.putExtra("kw", kw)
             startActivity(intent)
         }
 
-        btn_cart = view.findViewById(R.id.btn_shoppingcart)
-        btn_cart.setOnClickListener{
-            val intent = Intent(this@HomePageFragment.requireContext(),CartActivity::class.java)
+        btnCart = view.findViewById(R.id.btn_shoppingcart)
+        btnCart.setOnClickListener{
+            val intent = Intent(this@HomePageFragment.requireContext(), CartActivity::class.java)
+            intent.putExtra("kw", kw)
             startActivity(intent)
         }
 
@@ -88,6 +97,4 @@ class HomePageFragment : Fragment() {
 
 
 
-            
 }
-
