@@ -1,10 +1,8 @@
 package com.example.winxenchantixshop.Activity.LoginRegister
 
-import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.ActionBar
 
 import com.example.winxenchantixshop.databinding.ActivityRegisterBinding
 import com.google.firebase.database.DatabaseReference

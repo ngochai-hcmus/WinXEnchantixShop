@@ -21,7 +21,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/searching_bar"
             android:layout_width="279dp"
             android:layout_height="55dp"
             android:hint="Enter the product you are looking for"
@@ -32,31 +32,35 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/btn_shoppingcart"
             android:layout_width="40dp"
             android:layout_height="38dp"
             android:layout_gravity="center_horizontal"
+            android:background="@drawable/ic_shoppingcart"
             app:fabCustomSize="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/editText2"
+            app:layout_constraintStart_toEndOf="@+id/searching_bar"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.47"
-            app:maxImageSize="30dp"
-            app:srcCompat="@drawable/ic_shoppingcart" />
+            app:maxImageSize="30dp" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="32dp"
-            android:layout_height="29dp"
-            android:src="@drawable/ic_search"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/pink"
+            android:contentDescription="@string/action_search"
+            app:fabCustomSize="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/editText2"
-            app:layout_constraintHorizontal_bias="0.666"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/searching_bar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maxImageSize="25dp"
+            app:srcCompat="@drawable/ic_search" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

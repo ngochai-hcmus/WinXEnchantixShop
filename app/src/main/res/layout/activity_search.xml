@@ -29,12 +29,15 @@
             app:srcCompat="@drawable/ic_search" />
 
         <EditText
-            android:id="@+id/text_search"
-            android:layout_width="320dp"
+            android:id="@+id/searchView"
+            android:layout_width="382dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            app:iconifiedByDefault="false"
             android:hint="Enter the product you are looking for"
-            android:textSize="15dp"/>
+            android:imeOptions="actionSearch"
+            android:inputType="text"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

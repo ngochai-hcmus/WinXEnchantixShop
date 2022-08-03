@@ -18,9 +18,7 @@ import com.example.winxenchantixshop.DTO.Product
 import com.example.winxenchantixshop.R
 import com.squareup.picasso.Picasso
 
-class ProductAdapter : RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
-
-    private val listProduct = ArrayList<Product>()
+class ProductAdapter(private val listProduct : ArrayList<Product>) : RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_product,parent,false)
