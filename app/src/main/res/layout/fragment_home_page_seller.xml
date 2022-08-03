@@ -12,40 +12,147 @@
         android:background="@color/pink"
         app:title="Home Page">
 
+        <FrameLayout
+            android:id="@+id/frame1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="230dp">
+
+            <ImageView
+                android:id="@+id/img_ava_seller"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src = "@drawable/ava"/>
+        </FrameLayout>
     </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_homepage"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/grey">
+
+        <TextView
+            android:id="@+id/text_welcome"
+            android:layout_width="340dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:text="Welcome to WinXEnchantix Shop"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="120dp" />
+
+        <ImageView
+            android:id="@+id/img_app"
+            android:layout_width="222dp"
+            android:layout_height="115dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/img_marketing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <LinearLayout
+        android:id="@+id/layout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp">
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_search"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:id="@+id/layout3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="@color/pink"
-            android:contentDescription="@string/action_search"
-            app:fabCustomSize="40dp"
-            app:maxImageSize="25dp"
-            app:srcCompat="@drawable/ic_search" />
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
-        <EditText
-            android:id="@+id/text_search"
-            android:layout_width="320dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:hint="Enter the product you are looking for"
-            android:textSize="15dp"/>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/imgBtn_new_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabCustomSize="90dp"
+                app:maxImageSize="50dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_new_order"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/text_new_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notification"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="40dp">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/imgBtn_shipping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fabCustomSize="90dp"
+                    app:maxImageSize="50dp"
+                    app:srcCompat="@drawable/ic_shipped"
+                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/text_shipping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shipping"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="240dp"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/imgBtn_order_success"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fabCustomSize="90dp"
+                    app:maxImageSize="50dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_order_success"
+                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/text_order_success"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order history"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/gr_product_seller"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:horizontalSpacing="3dp"
-        android:numColumns="2"
-        android:verticalSpacing="3dp">
+    </LinearLayout>
 
-    </androidx.recyclerview.widget.RecyclerView>
-
-
-</LinearLayout>

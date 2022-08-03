@@ -18,7 +18,7 @@
                 android:id="@+id/img_delete"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/ic_price"
+                android:src="@drawable/ic_trash"
                 android:layout_marginLeft="130dp"/>
 
         </FrameLayout>
