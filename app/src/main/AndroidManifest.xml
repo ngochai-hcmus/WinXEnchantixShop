@@ -13,11 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WinXEnchantixShop"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Activity.AdminSeller.Admin_seller_homeActivity"
+            android:exported="false" />
         <activity
             android:name=".Activity.AdminSeller.ConversionActivity"
             android:exported="false" />
-
         <activity
             android:name=".Activity.LoginRegister.ForgetPasswordActivity"
             android:exported="false" />
