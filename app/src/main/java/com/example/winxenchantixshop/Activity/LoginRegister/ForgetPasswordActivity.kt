@@ -12,34 +12,37 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.auth.FirebaseAuth
 class ForgetPasswordActivity : AppCompatActivity() {
     private lateinit var binding : ActivityForgetPasswordBinding
-    private lateinit var database: DatabaseReference
-
-    lateinit var email : String
-    lateinit var type : String
-
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var email: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityForgetPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        database = FirebaseDatabase.getInstance().getReference("Account")
+
 
         binding.forgotPswMailButton.setOnClickListener {
             email =  binding.forgotPswMailInput.editText?.text.toString()
-            val account = Account(email.toString(),"customer")
-            type = "Customer"
-            database.child(email.toString()).setValue(account).addOnSuccessListener {
-                Toast.makeText(this, "Successful Saved", Toast.LENGTH_SHORT).show()
-
-
-            }.addOnFailureListener {
-                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                binding.forgotPswMailButton.error = "Invalid email format!"
             }
-
-
-
-
+            else{
+                FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener {task->
+                    if(task.isSuccessful){
+                        Toast.makeText(this, "Successful reset $email", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, LoginActivity::class.java);
+                        startActivity(intent)
+                    }
+                    else{
+                        Toast.makeText(this, task.exception!!.message.toString(),Toast.LENGTH_SHORT).show()
+                    }
+                }
+                    .addOnFailureListener {
+                        Toast.makeText(this, "Failed reset email", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, LoginActivity::class.java);
+                        startActivity(intent)
+                    }
+            }
         }
     }
 }

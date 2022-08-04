@@ -62,5 +62,10 @@ class LoginActivity : AppCompatActivity() {
 
 
         }
+
+        binding.forgotPsw.setOnClickListener {
+            val intent = Intent(this, ForgetPasswordActivity::class.java);
+            startActivity(intent)
+        }
     }
 }
