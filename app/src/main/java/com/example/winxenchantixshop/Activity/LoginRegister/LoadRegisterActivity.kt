@@ -10,36 +10,37 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import android.app.ProgressDialog
 import android.content.Intent
+import com.example.winxenchantixshop.Activity.MainActivity
+import com.example.winxenchantixshop.Activity.Product.PostProductActivity
 import com.example.winxenchantixshop.DTO.Account
 
 class LoadRegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoadRegisterBinding
     private lateinit var database: DatabaseReference
 
+    lateinit var n : String
+    lateinit var type : String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoadRegisterBinding.inflate(layoutInflater)
+
         database = FirebaseDatabase.getInstance().getReference("Account")
 
+        val email = intent.getStringExtra("Email")
+        type = "seller"
+        n = email.toString()
+        val account = Account(n.toString(),type,"","","","")
+        val nchild = n.subSequence(0,n.length-10).toString()
+        database.child(nchild.toString()).setValue(account).addOnSuccessListener {
 
-        Toast.makeText(this, "Hello 1", Toast.LENGTH_SHORT).show()
-        //val email = intent.getStringExtra("Email")
-        Toast.makeText(this, "Hello 2", Toast.LENGTH_SHORT).show()
-        val type = "Customer"
-            val email : String? = intent.getStringExtra("Email")
-        val account = Account(email,type)
-        Toast.makeText(this, "Mail: $email", Toast.LENGTH_SHORT).show()
-        database.child(email.toString()).setValue(account)
-            .addOnSuccessListener{
-                Toast.makeText(this, "Successful Saved", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-            }
+            Toast.makeText(this, "Successful Saved", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
             .addOnFailureListener {
-                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-
+                Toast.makeText(this, "Failed Saved", Toast.LENGTH_SHORT).show()
             }
 
     }

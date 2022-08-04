@@ -23,8 +23,8 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="409dp"
-            android:layout_height="37dp"
+            android:layout_width="413dp"
+            android:layout_height="28dp"
             android:layout_marginBottom="10dp"
             android:background="@color/grey"
             android:paddingLeft="10dp"
@@ -40,9 +40,9 @@
             app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
-            android:id="@+id/btn_edit_info"
-            android:layout_width="29dp"
-            android:layout_height="34dp"
+            android:id="@+id/btn_next"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
             android:layout_marginStart="373dp"
             android:layout_marginEnd="16dp"
             android:background="@color/grey"
@@ -52,59 +52,88 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/textView"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.333" />
+            app:layout_constraintVertical_bias="0.23" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/text_name"
-        android:layout_width="364dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:text="\tNameUser"
-        android:textColor="#6B6B6C"
-        android:textSize="20dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/text_phone"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:text="\tPhone"
-        android:textColor="#6B6B6C"
-        android:textSize="20dp"
-        android:textStyle="italic" />
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:id="@+id/text_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="User name:"
+            android:textSize="17sp" />
 
-    <TextView
-        android:id="@+id/text_location"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginBottom="10dp"
-        android:text="\tLocation"
-        android:textColor="#6B6B6C"
-        android:textSize="20dp"
-        android:textStyle="italic" />
+        <TextView
+            android:id="@+id/input_user_name"
+            android:layout_width="268dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textSize="17sp" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"/>
+        android:layout_height="29dp"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:id="@+id/text_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Phone:"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/input_phone"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:id="@+id/text_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Location:"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/input_location"
+            android:layout_width="287dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+
         android:layout_marginBottom="5dp"
         android:background="@color/grey"
-        android:paddingLeft="10dp"
-        android:text="\tOrder Details"
+        android:text="\t\tOrder Details"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold|italic"
@@ -117,25 +146,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView_list_product"
+        android:layout_width="374dp"
+        android:layout_height="179dp"
+        android:layout_marginLeft="20dp" />
 
-    <RelativeLayout
-        android:id="@+id/layout2"
-        android:layout_width="match_parent"
-        android:layout_height="170dp">
-
-        <GridView
-            android:layout_width="match_parent"
-            android:layout_height="155dp"></GridView>
-    </RelativeLayout>
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/grey"
-        android:paddingLeft="10dp"
         android:layout_marginEnd="5dp"
-        android:text="\tTatol Cost"
+        android:text="\t\tTatol Cost"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold|italic"
@@ -144,55 +168,85 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text_totalMoney"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="30dp"
-        android:text="\tThe Total Money"
-        android:textColor="#6B6B6C"
-        android:textStyle="italic"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text_transpostFee"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="30dp"
-        android:text="\tTransport Fee"
-        android:textColor="#6B6B6C"
-        android:textStyle="italic"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:id="@+id/text_total_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Total cost:"
+            android:textSize="17sp" />
 
-    <TextView
-        android:id="@+id/text_voucher"
+        <TextView
+            android:id="@+id/input_total_cost"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="398dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:id="@+id/text_transpose_fee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Transpose Fee:"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/input_transpose_fee"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="30dp"
-        android:text="\tVoucher"
-        android:textColor="#6B6B6C"
-        android:textStyle="italic"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="29dp"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:id="@+id/text_vouche"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Vouche:"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/input_voucher"
+            android:layout_width="305dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:background="@color/grey"
         android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
         android:text="\tPayment Method"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -203,34 +257,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:layout_width="374dp"
-        android:layout_height="83dp"
-        android:layout_marginLeft="35dp">
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:layout_marginLeft="15dp">
 
         <RadioButton
-            android:id="@+id/Btn_online_payment"
-            android:layout_width="186dp"
+            android:id="@+id/radioButton_online"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Online Payment" />
+            android:text="Online payment" />
 
         <RadioButton
-            android:id="@+id/Btn_direct_payment"
-            android:layout_width="186dp"
+            android:id="@+id/radioButton_direct"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Direct Payment" />
-
+            android:text="Direct payment"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
     </RadioGroup>
 
     <Button
         android:id="@+id/btn_Oder"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
-        android:layout_margin="25dp"
+        android:layout_width="307dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
         android:background="@color/pink"
-        android:text="Order" />
-
-
-
+        android:text="Order"
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 </LinearLayout>
 
 

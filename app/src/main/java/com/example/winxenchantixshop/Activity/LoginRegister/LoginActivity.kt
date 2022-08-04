@@ -49,7 +49,8 @@ class LoginActivity : AppCompatActivity() {
                 firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener {
                     if(it.isSuccessful)
                     {
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, LoadLoginActivity::class.java);
+                        intent.putExtra("Email",email.toString())
                         startActivity(intent)
                     }
                     else
