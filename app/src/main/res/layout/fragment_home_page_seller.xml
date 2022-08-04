@@ -230,7 +230,7 @@
                 android:id="@+id/layout_reply_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="83dp"
+                android:layout_marginLeft="95dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -240,14 +240,14 @@
                     android:layout_gravity="center"
                     app:fabCustomSize="60dp"
                     app:maxImageSize="30dp"
-                    app:srcCompat="@drawable/ic_reply"
+                    app:srcCompat="@drawable/ic_turnover"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
                 <TextView
                     android:id="@+id/text_reply_review"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Reply review"
+                    android:text="Turnover"
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
             </LinearLayout>
