@@ -25,11 +25,12 @@ class LoadRegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoadRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         database = FirebaseDatabase.getInstance().getReference("Account")
 
         val email = intent.getStringExtra("Email")
-        type = "seller"
+        type = "customer"
         n = email.toString()
         val account = Account(n.toString(),type,"","","","")
         val nchild = n.subSequence(0,n.length-10).toString()
@@ -42,6 +43,5 @@ class LoadRegisterActivity : AppCompatActivity() {
             .addOnFailureListener {
                 Toast.makeText(this, "Failed Saved", Toast.LENGTH_SHORT).show()
             }
-
     }
 }
