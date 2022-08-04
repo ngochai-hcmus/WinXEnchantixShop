@@ -14,7 +14,7 @@
         android:theme="@style/Theme.WinXEnchantixShop"
         tools:targetApi="31">
         <activity
-            android:name=".MyProductActivity"
+            android:name=".Activity.AdminSeller.MyProductActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.AdminSeller.Admin_seller_homeActivity"
