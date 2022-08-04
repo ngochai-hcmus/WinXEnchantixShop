@@ -10,6 +10,8 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import android.content.Intent
 import android.app.ProgressDialog
+import com.example.winxenchantixshop.Activity.AdminSeller.Admin_seller_homeActivity
+import com.example.winxenchantixshop.Activity.AdminSeller.ConversionActivity
 import com.example.winxenchantixshop.Activity.MainActivity
 import com.example.winxenchantixshop.Activity.Product.PostProductActivity
 
@@ -22,6 +24,7 @@ class LoadLoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
        binding = ActivityLoadRegisterBinding.inflate(layoutInflater)
+       setContentView(binding.root)
        database = FirebaseDatabase.getInstance().getReference("Account")
 
         val email = intent.getStringExtra("Email")
@@ -41,7 +44,13 @@ class LoadLoginActivity : AppCompatActivity() {
 
                 else if (type.toString() == "seller"){
                     Toast.makeText(this, "User is seller!!!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, PostProductActivity::class.java);
+                    val intent = Intent(this, Admin_seller_homeActivity::class.java);
+                    startActivity(intent)
+                }
+                else if (type.toString() == "admin")
+                {
+                    Toast.makeText(this, "User is Admin!!!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, Admin_seller_homeActivity::class.java);
                     startActivity(intent)
                 }
             }
