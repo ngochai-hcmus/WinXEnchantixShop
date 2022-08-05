@@ -18,7 +18,14 @@
             android:exported="false" />
         <activity
             android:name=".Activity.AdminSeller.Admin_seller_homeActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".Activity.AdminSeller.ConversionActivity"
             android:exported="false" />
@@ -42,12 +49,12 @@
             android:exported="true" />
         <activity
             android:name=".Activity.LoginRegister.LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".Activity.Product.ProductInformationActivity"
@@ -57,18 +64,19 @@
             android:exported="false" />
         <activity
             android:name=".Activity.Product.PostProductActivity"
-            android:exported="false">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
+            android:exported="false"/>
         <activity
-            android:name=".Activity.Cart.CartActivity"
-            android:exported="false" />
+            android:name=".Activity.Product.CartActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Activity.Product.OrderActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Activity.Product.ShippingAddressActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Activity.Product.SuccessfulOrderActivity"
+            android:exported="false"/>
         <activity
             android:name=".Activity.MainActivity"
             android:exported="false" />
