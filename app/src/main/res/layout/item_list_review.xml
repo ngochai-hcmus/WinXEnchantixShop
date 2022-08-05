@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="20dp"
+    android:id="@+id/layout_item_list_review"
+    android:layout_margin="5dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_profile"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        app:civ_border_color="@color/black"
+        app:civ_border_width="0dp"
+        android:layout_marginLeft="40dp"
+        android:layout_gravity="center_vertical"
+        tools:ignore="MissingClass"/>
+
+    <TextView
+        android:id="@+id/txt_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User name"
+        android:textSize="16sp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_datetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date time"
+        android:textSize="16sp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="15dp"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="140dp"/>
+
+
+</androidx.cardview.widget.CardView>
