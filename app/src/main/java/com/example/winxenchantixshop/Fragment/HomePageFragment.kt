@@ -13,7 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.winxenchantixshop.Activity.Cart.CartActivity
+import com.example.winxenchantixshop.Activity.Product.CartActivity
 import com.example.winxenchantixshop.Activity.Product.SearchActivity
 import com.example.winxenchantixshop.Adapter.ProductAdapter
 import com.example.winxenchantixshop.DTO.Product
@@ -89,9 +89,11 @@ class HomePageFragment : Fragment() {
         btnCart = view.findViewById(R.id.btn_shoppingcart)
         btnCart.setOnClickListener{
             val intent = Intent(this@HomePageFragment.requireContext(), CartActivity::class.java)
-            intent.putExtra("kw", kw)
             startActivity(intent)
+
         }
+
+
 
     }
 

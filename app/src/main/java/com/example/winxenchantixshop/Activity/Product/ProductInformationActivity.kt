@@ -1,20 +1,24 @@
 package com.example.winxenchantixshop.Activity.Product
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
 import android.widget.Toast
+import com.example.winxenchantixshop.Activity.MainActivity
+import com.example.winxenchantixshop.DTO.Product
+import com.example.winxenchantixshop.DTO.User
 import com.example.winxenchantixshop.R
 import com.squareup.picasso.Picasso
 import com.example.winxenchantixshop.databinding.ActivityProductInformationBinding
 import com.example.winxenchantixshop.databinding.ActivityVerifyOtpBinding
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class ProductInformationActivity : AppCompatActivity() {
     private lateinit var binding : ActivityProductInformationBinding
-    private var quantity = 0
-    private var imageUrl = ""
-    private var productName =""
+    private var listProduct = ArrayList<Product>()
+    private lateinit var db_ref : DatabaseReference
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
@@ -24,13 +28,15 @@ class ProductInformationActivity : AppCompatActivity() {
         binding = ActivityProductInformationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        db_ref = FirebaseDatabase.getInstance().getReference("Cart")
+
+
         val intent = intent
 
-        imageUrl = intent.getStringExtra("imageUrl").toString()
-        productName = intent.getStringExtra("productName").toString()
+        val imageUrl = intent.getStringExtra("imageUrl")
+        val productName = intent.getStringExtra("productName")
         val category = intent.getStringExtra("category")
         val price = intent.getStringExtra("price")
-        val amount = intent.getStringExtra("amount")
         val description = intent.getStringExtra("description")
 
         val imageProduct = binding.imgproduct
@@ -40,34 +46,60 @@ class ProductInformationActivity : AppCompatActivity() {
         binding.productname.text = productName
         binding.productprice.text = price
         binding.productdes.text = description
-        binding.btnaddcart.setOnClickListener{
 
+        binding.btnplus.setOnClickListener {
+            increaseQuantity()
+        }
+
+        binding.btnminus.setOnClickListener {
+            decreaseQuantity()
+        }
+
+        binding.btnbuy.setOnClickListener {
+            val intent = Intent(this, OrderActivity::class.java)
+            val product = Product(imageUrl, productName, category, price, binding.number.text.toString(), description)
+            listProduct.clear()
+            listProduct.add(product)
+            intent.putExtra("listProduct", listProduct)
+            startActivity(intent)
+        }
+
+        binding.btnaddcart.setOnClickListener {
+            val intent = Intent(this, CartActivity::class.java)
+            val product = Product(imageUrl, productName, category, price, binding.number.text.toString(), description)
+            val userName = User.Email("")!!.dropLast(10).toString()
+
+            if (binding.number.text.toString() != "0") {
+                db_ref.child(userName).child(productName.toString()).setValue(product)
+                Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                Toast.makeText(this, "Can not add empty product", Toast.LENGTH_SHORT).show()
+            }
+
+        }
+
+        binding.imgcart.setOnClickListener{
+            val intent = Intent(this, CartActivity::class.java)
+            startActivity(intent)
         }
 
     }
 
-    fun checkIsInCart() {
-
+    private fun increaseQuantity(){
+        val amount = binding.number.text.toString().toInt()
+        binding.number.text = amount.inc().toString()
     }
 
-    fun addToCart() {
-
-    }
-
-    fun minusQuantity(view: View) {
-        quantity--
-        if(quantity < 0){
-            quantity = 0
+    private fun decreaseQuantity(){
+        val amount = binding.number.text.toString().toInt()
+        if (amount == 0) {
+            binding.number.text = "0"
         }
-        val textview = findViewById(R.id.number) as TextView
-        textview.text = "$quantity"
+        else {
+            binding.number.text = amount.dec().toString()
+        }
 
     }
-    fun plusQuantity(view: View) {
-        quantity++
-        val textview = findViewById(R.id.number) as TextView
-        textview.text = "$quantity"
-    }
-
 
 }

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Cart.CartActivity">
+    tools:context=".Activity.Product.CartActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,6 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Your cart is emty!"
+                    android:visibility="gone"
                     android:textSize="30sp"></TextView>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -140,7 +141,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
+                        android:id="@+id/billCost"
                         android:text="Number"
                         android:textColor="#f000"
                         android:textSize="20dp"></TextView>

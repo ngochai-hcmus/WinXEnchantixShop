@@ -39,6 +39,7 @@ class LoadLoginActivity : AppCompatActivity() {
                 {
                     Toast.makeText(this, "User is customer!!!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java);
+                    intent.putExtra("EmailUser",email.toString())
                     startActivity(intent)
                 }
 
@@ -68,3 +69,4 @@ class LoadLoginActivity : AppCompatActivity() {
             }
     }
 }
+

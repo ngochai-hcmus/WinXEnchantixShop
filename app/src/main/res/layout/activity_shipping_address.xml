@@ -39,7 +39,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Name" />
+        android:hint="Name" />
 
     <EditText
         android:id="@+id/text_Phone"
@@ -48,7 +48,7 @@
         android:layout_margin="15dp"
         android:ems="10"
         android:inputType="phone"
-        android:text="@string/phone"
+        android:hint="@string/phone"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <TextView
@@ -68,7 +68,7 @@
         android:layout_margin="15dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Country"
+        android:hint="Country"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
@@ -78,7 +78,7 @@
         android:layout_margin="15dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Town, Wards, District"
+        android:hint="Town, Wards, District"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
@@ -88,7 +88,7 @@
         android:layout_margin="15dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="House number, street name"
+        android:hint="House number, street name"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <TextView

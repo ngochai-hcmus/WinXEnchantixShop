@@ -14,15 +14,6 @@
         android:theme="@style/Theme.WinXEnchantixShop"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.AdminSeller.MyProductActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activity.AdminSeller.Admin_seller_homeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activity.AdminSeller.ConversionActivity"
-            android:exported="false" />
-        <activity
             android:name=".Activity.LoginRegister.ForgetPasswordActivity"
             android:exported="false" />
         <activity
@@ -39,39 +30,71 @@
             android:exported="false" />
         <activity
             android:name=".Activity.LoginRegister.RegisterActivity"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".Activity.LoginRegister.LoginActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".Activity.Product.ProductInformationActivity"
-            android:exported="false" />
+            android:exported="false" >
+
+        </activity>
         <activity
-            android:name=".Activity.Product.SearchActivity"
-            android:exported="false" />
+            android:name=".Activity.Product.SuccessfulOrderActivity"
+            android:exported="false" >
+
+        </activity>
+        <activity
+            android:name=".Activity.Product.CartActivity"
+            android:exported="false" >
+
+        </activity>
+
         <activity
             android:name=".Activity.Product.PostProductActivity"
             android:exported="false">
+<!--        <intent-filter>-->
+<!--            <action android:name="android.intent.action.MAIN" />-->
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+<!--            <category android:name="android.intent.category.LAUNCHER" />-->
+<!--        </intent-filter>-->
         </activity>
         <activity
-            android:name=".Activity.Cart.CartActivity"
-            android:exported="false" />
+            android:name=".Activity.Product.SearchActivity"
+            android:exported="false" >
+<!--                    <intent-filter>-->
+<!--                        <action android:name="android.intent.action.MAIN" />-->
+
+<!--                        <category android:name="android.intent.category.LAUNCHER" />-->
+<!--                    </intent-filter>-->
+        </activity>
         <activity
             android:name=".Activity.MainActivity"
-            android:exported="false" />
+            android:exported="false">
+
+
+        </activity>
+        <activity
+            android:name=".Activity.Product.OrderActivity"
+            android:exported="false">
+
+
+        </activity>
+        <activity
+            android:name=".Activity.Product.ShippingAddressActivity"
+            android:exported="false">
+
+
+        </activity>
     </application>
 
 </manifest>

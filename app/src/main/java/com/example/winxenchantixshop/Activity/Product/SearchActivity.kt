@@ -45,12 +45,6 @@ class SearchActivity : AppCompatActivity() {
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val kw = intent.getStringExtra(EXTRA_MESSAGE)
-        println(kw)
-        if (kw != null){
-            searchByName(kw)
-        }
-
         binding.btnSearch.setOnClickListener {
             val kw = binding.searchView.getText().toString()
             searchByName(kw)
@@ -63,7 +57,6 @@ class SearchActivity : AppCompatActivity() {
 //            }
 //            true
 //        }
-
 
         productRecyclerView = binding.recycleViewListProduct
         productRecyclerView.layoutManager = LinearLayoutManager(this)
