@@ -25,6 +25,7 @@ class MyProductActivity : AppCompatActivity() {
         binding = ActivityMyProductBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         itemRecyclerView = binding.recycleMyProduct
         itemRecyclerView.layoutManager = LinearLayoutManager(this)
         itemRecyclerView.setHasFixedSize(true)

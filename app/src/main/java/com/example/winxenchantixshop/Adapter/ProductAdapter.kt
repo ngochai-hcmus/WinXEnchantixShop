@@ -13,12 +13,17 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.winxenchantixshop.Activity.Product.EditProductActivity
 import com.example.winxenchantixshop.Activity.Product.ProductInformationActivity
 import com.example.winxenchantixshop.DTO.Product
 import com.example.winxenchantixshop.R
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 
 class ProductAdapter(private val listProduct : ArrayList<Product>) : RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
+
+    private lateinit var db_ref : DatabaseReference
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_product,parent,false)
@@ -38,19 +43,38 @@ class ProductAdapter(private val listProduct : ArrayList<Product>) : RecyclerVie
         val category = currentItem.category
         val amount = currentItem.amount
 
+        db_ref = FirebaseDatabase.getInstance().getReference("Product")
+
+        val type = db_ref.child("type").toString()
+
         holder.itemView.setOnClickListener(object :View.OnClickListener{
             override fun onClick(v:View?) {
-                val activity = v!!.context as AppCompatActivity
-                val intent = Intent(v.context,ProductInformationActivity::class.java)
+                if(type == "customer"){
+                    val activity = v!!.context as AppCompatActivity
+                    val intent = Intent(v.context,ProductInformationActivity::class.java)
 
-                intent.putExtra("imageUrl", imageProduct)
-                intent.putExtra("productName", holder.productName.text)
-                intent.putExtra("category", category)
-                intent.putExtra("price", holder.price.text)
-                intent.putExtra("amount", amount)
-                intent.putExtra("description", holder.describe.text)
+                    intent.putExtra("imageUrl", imageProduct)
+                    intent.putExtra("productName", holder.productName.text)
+                    intent.putExtra("category", category)
+                    intent.putExtra("price", holder.price.text)
+                    intent.putExtra("amount", amount)
+                    intent.putExtra("description", holder.describe.text)
+                    activity.startActivity(intent)
 
-                activity.startActivity(intent)
+                }else{
+                    val activity = v!!.context as AppCompatActivity
+                    val intent = Intent(v.context,EditProductActivity::class.java)
+
+                    intent.putExtra("imageUrl", imageProduct)
+                    intent.putExtra("productName", holder.productName.text)
+                    intent.putExtra("category", category)
+                    intent.putExtra("price", holder.price.text)
+                    intent.putExtra("amount", amount)
+                    intent.putExtra("description", holder.describe.text)
+
+                    activity.startActivity(intent)
+
+                }
             }
         })
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Product.PostProductActivity"
+    tools:context=".Activity.Product.EditProductActivity"
     android:orientation="vertical"
     android:gravity="center">
 
@@ -172,7 +172,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_post"
+        android:id="@+id/btn_edit"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="Edit"
