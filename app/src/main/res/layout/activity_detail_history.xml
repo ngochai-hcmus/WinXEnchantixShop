@@ -12,7 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/pink"
         android:padding="10dp"
-        app:title="Payment Order">
+        app:title="Order detail placed">
         />
 
     </androidx.appcompat.widget.Toolbar>
@@ -157,9 +157,9 @@
         android:id="@+id/textView12"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/grey"
         android:layout_marginEnd="5dp"
-        android:text="\t\Total Cost"
+        android:background="@color/grey"
+        android:text="\t\tTatol Cost"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold|italic"
@@ -168,10 +168,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:id="@+id/text_total_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Total cost:"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/input_total_cost"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="398dp"
+        android:layout_height="28dp"
         android:layout_marginLeft="10dp">
 
         <TextView
@@ -180,7 +202,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
-            android:text="Shipping Fee:"
+            android:text="Transport Fee:"
             android:textSize="17sp" />
 
         <TextView
@@ -191,14 +213,12 @@
             android:layout_marginTop="5dp"
             android:textSize="17sp" />
 
-
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="398dp"
-        android:layout_height="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
         android:layout_marginLeft="10dp">
-
 
         <TextView
             android:id="@+id/text_vouche"
@@ -217,80 +237,8 @@
             android:layout_marginTop="5dp"
             android:textSize="17sp" />
 
-
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="29dp"
-        android:layout_marginLeft="10dp">
-
-        <TextView
-            android:id="@+id/text_total_cost"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp"
-            android:text="Total cost:"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/input_total_cost"
-            android:layout_width="290dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:textSize="17sp" />
-
-
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/grey"
-        android:paddingLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="\tPayment Method"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="94dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp">
-
-        <RadioButton
-            android:id="@+id/radioButton_online"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Online payment" />
-
-        <RadioButton
-            android:id="@+id/radioButton_direct"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Direct payment"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/btn_Oder"
-        android:layout_width="307dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="50dp"
-        android:background="@color/pink"
-        android:text="Order"
-        tools:ignore="TextContrastCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 </LinearLayout>
 
 
