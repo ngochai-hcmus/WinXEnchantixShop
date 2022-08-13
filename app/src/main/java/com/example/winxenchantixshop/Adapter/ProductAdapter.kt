@@ -12,16 +12,18 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.winxenchantixshop.Activity.Product.EditProductActivity
 import com.example.winxenchantixshop.Activity.Product.ProductInformationActivity
+import com.example.winxenchantixshop.Activity.Util.ProductDiffUtil
 import com.example.winxenchantixshop.DTO.Product
 import com.example.winxenchantixshop.R
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 
-class ProductAdapter(private val listProduct : ArrayList<Product>) : RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
+class ProductAdapter(private var listProduct : ArrayList<Product>) : RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
 
     private lateinit var db_ref : DatabaseReference
 
@@ -91,6 +93,13 @@ class ProductAdapter(private val listProduct : ArrayList<Product>) : RecyclerVie
         this.listProduct.addAll(listProduct)
         notifyDataSetChanged()
 
+    }
+
+    fun setData(newProductList: ArrayList<Product>){
+        val diffUtil = ProductDiffUtil(listProduct,newProductList)
+        val diffResult = DiffUtil.calculateDiff(diffUtil)
+        listProduct = newProductList
+        diffResult.dispatchUpdatesTo(this)
     }
 
 

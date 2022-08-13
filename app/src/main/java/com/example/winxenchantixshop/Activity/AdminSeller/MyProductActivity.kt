@@ -25,7 +25,6 @@ class MyProductActivity : AppCompatActivity() {
         binding = ActivityMyProductBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         itemRecyclerView = binding.recycleMyProduct
         itemRecyclerView.layoutManager = LinearLayoutManager(this)
         itemRecyclerView.setHasFixedSize(true)
@@ -52,6 +51,7 @@ class MyProductActivity : AppCompatActivity() {
         db_ref = FirebaseDatabase.getInstance().getReference("Product")
         db_ref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                listProduct.clear()
                 if (snapshot.exists()) {
                     for (productSnapshot in snapshot.children) {
                         val product = productSnapshot.getValue(Product::class.java)
