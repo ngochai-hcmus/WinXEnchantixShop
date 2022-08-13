@@ -1,23 +1,18 @@
 package com.example.winxenchantixshop.Adapter
 
-import android.content.Context
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.PixelCopy
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.winxenchantixshop.Activity.Product.EditProductActivity
 import com.example.winxenchantixshop.Activity.Product.ProductInformationActivity
-import com.example.winxenchantixshop.Activity.Util.ProductDiffUtil
 import com.example.winxenchantixshop.DTO.Product
+import com.example.winxenchantixshop.DTO.User
 import com.example.winxenchantixshop.R
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -45,10 +40,17 @@ class ProductAdapter(private var listProduct : ArrayList<Product>) : RecyclerVie
         val category = currentItem.category
         val amount = currentItem.amount
 
+        db_ref = FirebaseDatabase.getInstance().getReference("Account")
+        val currentUser = User.Email("")!!.dropLast(10)
+
+        var type = ""
+        db_ref.child(currentUser).child("type").get().addOnSuccessListener {
+            type = it.value.toString()
+        }.addOnFailureListener{
+            Log.e("firebase", "Error getting data", it)
+        }
+
         db_ref = FirebaseDatabase.getInstance().getReference("Product")
-
-        val type = db_ref.child("type").toString()
-
         holder.itemView.setOnClickListener(object :View.OnClickListener{
             override fun onClick(v:View?) {
                 if(type == "customer"){
@@ -93,13 +95,6 @@ class ProductAdapter(private var listProduct : ArrayList<Product>) : RecyclerVie
         this.listProduct.addAll(listProduct)
         notifyDataSetChanged()
 
-    }
-
-    fun setData(newProductList: ArrayList<Product>){
-        val diffUtil = ProductDiffUtil(listProduct,newProductList)
-        val diffResult = DiffUtil.calculateDiff(diffUtil)
-        listProduct = newProductList
-        diffResult.dispatchUpdatesTo(this)
     }
 
 
