@@ -1,13 +1,19 @@
 package com.example.winxenchantixshop.Adapter
 
+import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.PixelCopy
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.winxenchantixshop.Activity.Product.EditProductActivity
 import com.example.winxenchantixshop.Activity.Product.ProductInformationActivity
@@ -41,6 +47,7 @@ class ProductAdapter(private var listProduct : ArrayList<Product>) : RecyclerVie
         val amount = currentItem.amount
 
         db_ref = FirebaseDatabase.getInstance().getReference("Account")
+
         val currentUser = User.Email("")!!.dropLast(10)
 
         var type = ""
@@ -51,6 +58,7 @@ class ProductAdapter(private var listProduct : ArrayList<Product>) : RecyclerVie
         }
 
         db_ref = FirebaseDatabase.getInstance().getReference("Product")
+
         holder.itemView.setOnClickListener(object :View.OnClickListener{
             override fun onClick(v:View?) {
                 if(type == "customer"){
