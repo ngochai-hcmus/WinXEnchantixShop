@@ -10,6 +10,8 @@ import com.google.firebase.auth.FirebaseAuth
 import android.text.TextUtils;
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
+import com.example.winxenchantixshop.Activity.AdminSeller.Admin_seller_homeActivity
+import com.example.winxenchantixshop.Activity.AdminSeller.ConversionActivity
 import com.example.winxenchantixshop.Activity.MainActivity
 import com.example.winxenchantixshop.Activity.Product.PostProductActivity
 
@@ -49,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
                 firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener {
                     if(it.isSuccessful)
                     {
-                        val intent = Intent(this, LoadLoginActivity::class.java);
+                        val intent = Intent(this, Admin_seller_homeActivity::class.java);
                         intent.putExtra("Email",email.toString())
                         startActivity(intent)
                     }

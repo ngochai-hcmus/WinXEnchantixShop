@@ -32,9 +32,8 @@ class LoadRegisterActivity : AppCompatActivity() {
         val email = intent.getStringExtra("Email")
         type = "customer"
         n = email.toString()
-        val account = Account(n,n,type,"","","","")
+        val account = Account(n.toString(),type,"","","","")
         val nchild = n.subSequence(0,n.length-10).toString()
-
         database.child(nchild.toString()).setValue(account).addOnSuccessListener {
 
             Toast.makeText(this, "Successful Saved", Toast.LENGTH_SHORT).show()

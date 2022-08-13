@@ -23,9 +23,9 @@ class LoadLoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       binding = ActivityLoadRegisterBinding.inflate(layoutInflater)
-       setContentView(binding.root)
-       database = FirebaseDatabase.getInstance().getReference("Account")
+        binding = ActivityLoadRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        database = FirebaseDatabase.getInstance().getReference("Account")
 
         val email = intent.getStringExtra("Email")
         n = email.toString()
@@ -35,6 +35,7 @@ class LoadLoginActivity : AppCompatActivity() {
             if(it.exists()){
                 Toast.makeText(this, "Login successful!!!", Toast.LENGTH_SHORT).show()
                 val type = it.child("type").value
+                Toast.makeText(this, type.toString(), Toast.LENGTH_SHORT).show()
                 if (type.toString() == "customer")
                 {
                     Toast.makeText(this, "User is customer!!!", Toast.LENGTH_SHORT).show()
