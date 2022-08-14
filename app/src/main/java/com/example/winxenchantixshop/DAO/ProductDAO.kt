@@ -30,8 +30,6 @@ class ProductDAO {
             INSTANCE = instance
             instance
         }
-
-
     }
 
 

@@ -3,6 +3,7 @@ package com.example.winxenchantixshop.Activity.AdminSeller
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.winxenchantixshop.Activity.MainActivity
 import com.example.winxenchantixshop.Activity.Product.PostProductActivity
 import com.example.winxenchantixshop.databinding.FragmentHomePageSellerBinding
@@ -54,6 +55,7 @@ class Admin_seller_homeActivity : AppCompatActivity() {
 
         }
         binding.layoutListSeller.setOnClickListener {
+            Toast.makeText(this, "success 1", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, ListSellerActivity::class.java);
             startActivity(intent)
         }
