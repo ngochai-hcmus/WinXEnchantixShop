@@ -253,12 +253,12 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/image_success"
+            android:id="@+id/image_waiting"
             android:layout_width="32dp"
             android:layout_height="29dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="6dp"
-            android:src="@drawable/ic_success"
+            android:src="@drawable/ic_waiting"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/editText2"
             app:layout_constraintHorizontal_bias="0.666"
@@ -271,7 +271,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="65dp"
             android:layout_marginTop="5dp"
-            android:text="Order has been confirmed."
+            android:text="Order is waiting to be confirmed."
             android:textSize="18sp"
             android:textStyle="italic|bold" />
 
@@ -279,7 +279,6 @@
 
 
 </LinearLayout>
-
 
 
 
