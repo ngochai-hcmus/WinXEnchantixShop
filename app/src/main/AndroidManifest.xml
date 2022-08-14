@@ -99,6 +99,18 @@
         <activity
             android:name=".Activity.MainActivity"
             android:exported="false" />
+        <activity
+            android:name=".Activity.Product.NewOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Product.NewOrderDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Product.OrderConfirmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Product.OrderConfirmDetailActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
