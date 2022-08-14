@@ -49,20 +49,20 @@
         android:layout_marginTop="5dp">
 
         <ImageView
-            android:id="@+id/img_confirm"
+            android:id="@+id/img_new_order"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_gravity=""
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="50dp"
-            app:srcCompat="@drawable/ic_confirm" />
+            app:srcCompat="@drawable/ic_new_order" />
 
         <ImageView
-            android:id="@+id/img_ship"
+            android:id="@+id/img_confirm"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
-            app:srcCompat="@drawable/ic_shipped" />
+            app:srcCompat="@drawable/ic_order_success" />
 
         <ImageView
             android:id="@+id/img_feedback"
