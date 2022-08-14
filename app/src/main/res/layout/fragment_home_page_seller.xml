@@ -14,18 +14,28 @@
 
         <FrameLayout
             android:id="@+id/frame1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="230dp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="20dp">
+
+            <ImageView
+                android:id="@+id/img_chat"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_chat"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/img_profile"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="2dp"
                 app:civ_border_color="#FF000000"
                 app:civ_border_width="0dp"
-                tools:ignore="MissingClass" />
+                tools:ignore="MissingClass"
+                android:layout_marginStart="55dp"/>
 
         </FrameLayout>
     </androidx.appcompat.widget.Toolbar>
@@ -37,22 +47,6 @@
         android:layout_marginBottom="10dp"
         android:background="@color/grey">
 
-        <TextView
-            android:id="@+id/txt_welcome"
-            android:layout_width="340dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="40dp"
-            android:text="Welcome to WinXEnchantix Shop"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="120dp" />
-
         <ImageView
             android:id="@+id/img_app"
             android:layout_width="222dp"
@@ -63,6 +57,25 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_welcome"
+            android:layout_width="340dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="120dp"
+            android:text="Welcome to WinXEnchantix Shop"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_app"
+            tools:ignore="MissingConstraints" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -82,7 +95,7 @@
                 android:id="@+id/layout_myproduct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="78dp"
+                android:layout_marginLeft="73dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -143,7 +156,7 @@
                 android:id="@+id/layout_new_order"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
+                android:layout_marginLeft="75dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -169,7 +182,7 @@
                 android:id="@+id/layout_order_history"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
+                android:layout_marginLeft="81dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -204,7 +217,7 @@
                 android:id="@+id/layout_list_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
+                android:layout_marginLeft="74dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -230,7 +243,7 @@
                 android:id="@+id/layout_reply_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="95dp"
+                android:layout_marginLeft="96dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -264,7 +277,7 @@
                 android:id="@+id/layout_list_seller"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
+                android:layout_marginLeft="74dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -278,7 +291,7 @@
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
                 <TextView
-                    android:id="@+id/txt__list_seller"
+                    android:id="@+id/txt_list_seller"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="List sellers"
@@ -290,7 +303,7 @@
                 android:id="@+id/layout_list_customer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
+                android:layout_marginLeft="77dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -315,7 +328,69 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/layout_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:id="@+id/layout_convert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="86dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/imgBtn_convert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:fabCustomSize="60dp"
+                    app:maxImageSize="30dp"
+                    app:srcCompat="@drawable/ic_convert"
+                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/txt_convert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Convert"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_edit_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="82dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/imgBtn_edit_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:fabCustomSize="60dp"
+                    app:maxImageSize="30dp"
+                    app:srcCompat="@drawable/ic_edit_info"
+                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/text_edit_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit information"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
         </LinearLayout>
+
+    </LinearLayout>
 
     </LinearLayout>
 
