@@ -73,6 +73,11 @@
         <activity
             android:name=".Activity.Product.SearchActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".Activity.AdminSeller.ConfirmActivity"
+            android:exported="false" />
+
         <activity
             android:name=".Activity.Product.PostProductActivity"
             android:exported="false" />
