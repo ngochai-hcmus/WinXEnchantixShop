@@ -277,6 +277,13 @@
 
     </FrameLayout>
 
+    <Button
+        android:id="@+id/button_received"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="35dp"
+        android:text="Order received" />
+
 
 </LinearLayout>
 
