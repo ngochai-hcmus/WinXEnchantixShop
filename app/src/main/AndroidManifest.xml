@@ -31,6 +31,40 @@
 
         </activity>
         <activity
+            android:name=".Activity.AdminSeller.ListCustomerActivity"
+            android:exported="true" >
+
+
+        </activity>
+        <activity
+            android:name=".Activity.AdminSeller.ListSellerActivity"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".Activity.AdminSeller.ListReviewActivity"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".Activity.AdminSeller.NewOrderActivity"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".Activity.AdminSeller.OrderHistoryActivity"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".Activity.AdminSeller.PeplyReviewActivity"
+            android:exported="true" >
+
+        </activity>
+
+
+
+        <activity
             android:name=".Activity.LoginRegister.ForgetPasswordActivity"
             android:exported="true" >
 
@@ -57,6 +91,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".Activity.Product.ProductInformationActivity"

@@ -19,15 +19,17 @@ class ForgetPasswordActivity : AppCompatActivity() {
         binding = ActivityForgetPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        firebaseAuth = FirebaseAuth.getInstance()
 
 
         binding.forgotPswMailButton.setOnClickListener {
             email =  binding.forgotPswMailInput.editText?.text.toString()
+
             if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                 binding.forgotPswMailButton.error = "Invalid email format!"
             }
             else{
-                FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener {task->
+                firebaseAuth.sendPasswordResetEmail(email).addOnCompleteListener {task->
                     if(task.isSuccessful){
                         Toast.makeText(this, "Successful reset $email", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, LoginActivity::class.java);
