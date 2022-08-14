@@ -21,6 +21,7 @@ import com.squareup.picasso.Picasso
 import java.io.File
 import java.io.FileDescriptor
 import java.io.IOException
+import java.net.URL
 import java.security.Permission
 import java.text.SimpleDateFormat
 import java.util.*
@@ -31,8 +32,7 @@ class EditProductActivity : AppCompatActivity() {
     private lateinit var database : DatabaseReference
     lateinit var imageUri: Uri
 
-    private val RESULT_LOAD_IMAGE = 123
-    val IMAGE_CAPTURE_CODE = 654
+    private val pickImage = 100
     lateinit var imageProduct: ImageView
     lateinit var productName : String
     lateinit var name: String
@@ -40,6 +40,7 @@ class EditProductActivity : AppCompatActivity() {
     lateinit var price : String
     lateinit var amount : String
     lateinit var description : String
+    lateinit var imageUrl : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,13 +52,11 @@ class EditProductActivity : AppCompatActivity() {
         init()
 
         binding.btnEditImg.setOnClickListener{
-            val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE)
+            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+            startActivityForResult(gallery,pickImage)
         }
 
-
         binding.btnEdit.setOnClickListener {
-            deleteProduct(name)
             productName  = binding.textInputLayoutProductName.editText?.text.toString()
             category  = binding.textInputLayoutCategory.editText?.text.toString()
             price  = binding.textInputLayoutPrice.editText?.text.toString()
@@ -78,18 +77,16 @@ class EditProductActivity : AppCompatActivity() {
 
         val intent = intent
 
-        val imageUrl = intent.getStringExtra("imageUrl")
-        val productName = intent.getStringExtra("productName")
-        val category = intent.getStringExtra("category")
-        val price = intent.getStringExtra("price")
-        val amount = intent.getStringExtra("amount")
-        val description = intent.getStringExtra("description")
+        imageUrl = intent.getStringExtra("imageUrl").toString()
+        name = intent.getStringExtra("productName").toString()
+        category = intent.getStringExtra("category").toString()
+        price = intent.getStringExtra("price").toString()
+        amount = intent.getStringExtra("amount").toString()
+        description = intent.getStringExtra("description").toString()
 
         Picasso.get().load(imageUrl).into(imageProduct)
 
-        name = productName.toString()
-
-        binding.textInputEditTextProductName.setText(productName)
+        binding.textInputEditTextProductName.setText(name)
         binding.textInputEditTextCategory.setText(category)
         binding.textInputEditTextPrice.setText(price)
         binding.textInputEditTextAmount.setText(amount)
@@ -108,36 +105,15 @@ class EditProductActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == IMAGE_CAPTURE_CODE && resultCode == Activity.RESULT_OK) {
-            imageProduct!!.setImageURI(imageUri)
-            val bitmap = uriToBitmap(imageUri!!)
-            imageProduct!!.setImageBitmap(bitmap)
-        }
-        if (requestCode == RESULT_LOAD_IMAGE && resultCode == Activity.RESULT_OK && data != null) {
+        if (resultCode == RESULT_OK && requestCode == pickImage) {
             imageUri = data?.data!!
-            imageProduct!!.setImageURI(imageUri)
+            imageProduct.setImageURI(imageUri)
+
+            uploadImage()
         }
     }
 
-    private fun uriToBitmap(selectedFileUri: Uri): Bitmap? {
-        try {
-            val parcelFileDescriptor = contentResolver.openFileDescriptor(selectedFileUri, "r")
-            val fileDescriptor: FileDescriptor = parcelFileDescriptor!!.fileDescriptor
-            val image = BitmapFactory.decodeFileDescriptor(fileDescriptor)
-            parcelFileDescriptor.close()
-            return image
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        return null
-    }
-
-    private fun uploadData() {
-        val progressDialog = ProgressDialog(this)
-        progressDialog.setMessage("Uploading File ...")
-        progressDialog.setCancelable(false)
-        progressDialog.show()
-
+    private fun uploadImage() {
         val formatter = SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.getDefault())
         val now = Date()
         val fileName = formatter.format(now)
@@ -146,46 +122,34 @@ class EditProductActivity : AppCompatActivity() {
         storage.putFile(imageUri).addOnSuccessListener {
             imageProduct.setImageURI(null)
             Toast.makeText(this, "Successful Uploaded", Toast.LENGTH_SHORT).show()
-            if (progressDialog.isShowing) progressDialog.dismiss()
 
-            val localFile = File.createTempFile(fileName,"")
+            val localFile = File.createTempFile(fileName, "")
             storage.getFile(localFile).addOnSuccessListener {
-                if(progressDialog.isShowing)
-                    progressDialog.dismiss()
-
                 val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
                 imageProduct.setImageBitmap(bitmap)
-
             }
 
             storage.downloadUrl.addOnSuccessListener {
-                val product = Product(it.toString(), productName, category, price, amount, description)
+                imageUrl = it.toString()
 
-                database.child(productName.toString()).setValue(product).addOnSuccessListener {
-                    Toast.makeText(this, "Successful Saved", Toast.LENGTH_SHORT).show()
-
-                }.addOnFailureListener {
-                    Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-
-                }
             }.addOnFailureListener {
-                if (progressDialog.isShowing) progressDialog.dismiss()
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-
             }
-
-
         }
     }
 
-//    private object COMPARATOR: DiffUtil.ItemCallback<Product>() {
-//
-//        override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean {
-//            return oldItem == newItem
-//        }
-//
-//        override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean {
-//            return oldItem.productName == newItem.productName
-//        }
-//    }
+    private fun uploadData() {
+        val product = Product(imageUrl, productName, category, price, amount, description)
+
+        database.child(productName).setValue(product).addOnSuccessListener {
+            deleteProduct(name)
+            Toast.makeText(this, "Successful Saved", Toast.LENGTH_SHORT).show()
+
+        }.addOnFailureListener {
+            Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+
+        }
+
+    }
+
 }
