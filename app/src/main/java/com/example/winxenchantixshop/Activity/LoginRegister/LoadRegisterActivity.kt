@@ -13,10 +13,12 @@ import android.content.Intent
 import com.example.winxenchantixshop.Activity.MainActivity
 import com.example.winxenchantixshop.Activity.Product.PostProductActivity
 import com.example.winxenchantixshop.DTO.Account
+import com.example.winxenchantixshop.DTO.UserInfor
 
 class LoadRegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoadRegisterBinding
     private lateinit var database: DatabaseReference
+    private lateinit var database2 : DatabaseReference
 
     lateinit var n : String
     lateinit var type : String
@@ -29,19 +31,34 @@ class LoadRegisterActivity : AppCompatActivity() {
 
         database = FirebaseDatabase.getInstance().getReference("Account")
 
+        database2 = FirebaseDatabase.getInstance().getReference("UserInfor")
+
         val email = intent.getStringExtra("Email")
         type = "customer"
         n = email.toString()
 
         val nchild = n.subSequence(0,n.length-10).toString()
         val account = Account(n.toString(),type,nchild,"","","")
+
+
+        val userinfor = UserInfor(n,"",nchild,"","","",type)
+        database2.child(nchild.toString()).setValue((userinfor)).addOnSuccessListener {
+            Toast.makeText(this, "Successful Saved user info", Toast.LENGTH_SHORT).show()
+        }
+            .addOnFailureListener{
+                Toast.makeText(this, "Failed Saved user info", Toast.LENGTH_SHORT).show()
+            }
+
+
         database.child(nchild.toString()).setValue(account).addOnSuccessListener {
-            Toast.makeText(this, "Successful Saved", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Successful Saved account", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
             .addOnFailureListener {
-                Toast.makeText(this, "Failed Saved", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Failed Saved account", Toast.LENGTH_SHORT).show()
             }
+
+
     }
 }
