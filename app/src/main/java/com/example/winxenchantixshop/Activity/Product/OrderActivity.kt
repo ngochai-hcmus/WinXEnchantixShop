@@ -1,8 +1,10 @@
 package com.example.winxenchantixshop.Activity.Product
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -20,6 +22,8 @@ import com.example.winxenchantixshop.R
 import com.example.winxenchantixshop.databinding.ActivityOrderBinding
 import com.example.winxenchantixshop.databinding.ActivityProductInformationBinding
 import com.google.firebase.database.*
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class OrderActivity : AppCompatActivity() {
@@ -30,6 +34,7 @@ class OrderActivity : AppCompatActivity() {
     private lateinit var itemRecyclerView: RecyclerView
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOrderBinding.inflate(layoutInflater)
@@ -64,6 +69,29 @@ class OrderActivity : AppCompatActivity() {
 
 
         binding.btnOder.setOnClickListener {
+            val currentTime = LocalDateTime.now()
+            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+            val formatBill = DateTimeFormatter.ofPattern("yyyyMMddHHmmss")
+            val time = currentTime.format(formatter)
+
+            val username =  binding.inputUserName.text
+            val phone = binding.inputPhone.text
+            val location = binding.inputLocation.text
+
+            db_ref = FirebaseDatabase.getInstance().getReference("WaitingOrder")
+                .child("${currentTime.format(formatBill)}${currentUser!!.dropLast(10)}")
+            for (i in listProduct) {
+                db_ref.child("List").child(i.productName.toString()).setValue(i)
+            }
+
+            db_ref.child("ClientInfo").child("Time").setValue(time)
+            db_ref.child("ClientInfo").child("Cost").setValue(billCost.toString())
+            db_ref.child("ClientInfo").child("name").setValue(username)
+            db_ref.child("ClientInfo").child("phone").setValue(phone)
+            db_ref.child("ClientInfo").child("location").setValue(location)
+            db_ref.child("ClientInfo").child("UserID").setValue(currentUser!!.dropLast(10))
+
+
             intent = Intent(this, SuccessfulOrderActivity::class.java)
             startActivity(intent)
         }

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.winxenchantixshop.DTO.User
 import com.example.winxenchantixshop.Fragment.CustomerPageFragment
 import com.example.winxenchantixshop.Fragment.HomePageFragment
+import com.example.winxenchantixshop.Fragment.NotifyPageFragment
 import com.example.winxenchantixshop.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.home ->  {currentFragment = HomePageFragment()}
                 R.id.user -> {currentFragment = CustomerPageFragment()}
+                R.id.notice -> {currentFragment = NotifyPageFragment()}
             }
             supportFragmentManager.beginTransaction().replace(R.id.frame_layout,currentFragment).commit()
             true
