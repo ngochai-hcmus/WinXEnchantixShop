@@ -45,11 +45,12 @@
             android:id="@+id/btn_add_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
             android:layout_marginLeft="250dp"
+            android:layout_marginTop="70dp"
             android:src="@drawable/ic_add_image"
             app:fabCustomSize="80dp"
-            app:maxImageSize="70dp">
+            app:maxImageSize="70dp"
+            tools:ignore="SpeakableTextPresentCheck">
 
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
     </FrameLayout>
