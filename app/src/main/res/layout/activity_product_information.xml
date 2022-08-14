@@ -31,26 +31,6 @@
                 android:src="@drawable/ic_chat"
                 android:layout_marginLeft="77dp"/>
         </FrameLayout>
-        <!--        <LinearLayout-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            android:orientation="horizontal" />-->
-
-        <!--        <ImageButton-->
-        <!--            android:id="@+id/chatting"-->
-        <!--            android:layout_width="40dp"-->
-        <!--            android:layout_height="40dp"-->
-        <!--            android:background= "#f7bacf"-->
-        <!--            android:layout_marginLeft="40dp"-->
-        <!--            android:src="@drawable/ic_mess" />-->
-        a
-        <!--        <ImageButton-->
-        <!--            android:id="@+id/cart"-->
-        <!--            android:layout_width="50dp"-->
-        <!--            android:layout_height="50dp"-->
-        <!--            android:layout_marginLeft="3dp"-->
-        <!--            android:background= "#f7bacf"-->
-        <!--            android:src="@drawable/ic_cart" />-->
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
@@ -86,7 +66,8 @@
                     android:onClick="minusQuantity"
                     android:text="-"
                     android:textColor="#FF000000"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    tools:ignore="OnClick" />
 
                 <TextView
                     android:id="@+id/number"
@@ -111,7 +92,8 @@
                     android:text="+"
                     android:textAlignment="center"
                     android:textColor="#FF000000"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    tools:ignore="OnClick" />
 
             </FrameLayout>
 
@@ -165,17 +147,29 @@
             android:layout_height="wrap_content"
             android:text="Price"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginTop="10dp"/>
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/productdes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Product description"
+            android:layout_marginTop="5dp"
+            android:text="Product description:"
             android:textColor="@color/black"
-            android:textSize="30sp" />
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/txt_descrip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="............"
+            android:textSize="16sp"
+            android:layout_margin="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@id/txt_descrip" />
     </LinearLayout>
 
 </LinearLayout>
