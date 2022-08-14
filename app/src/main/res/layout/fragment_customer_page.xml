@@ -15,74 +15,209 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ImageView
-        android:id="@+id/img_ava"
-        android:layout_width="123dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        app:srcCompat="@drawable/ava" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_profile"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp"
+        tools:ignore="MissingClass" />
 
     <TextView
         android:id="@+id/txt_username"
+        android:layout_marginTop="5dp"
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_gravity="center"
         android:textSize="20sp"
         android:textColor="@color/black"
-        android:text="User name" />
+        android:text="User name"
+        android:gravity="center_horizontal"/>
 
-    <TextView
-        android:id="@+id/txt_myorder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:text="My order"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
-
-
-    <FrameLayout
-        android:id="@+id/frame1"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginTop="5dp">
+        android:layout_height="115dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/grey"
+        app:cardCornerRadius="10dp">
 
-        <ImageView
-            android:id="@+id/img_new_order"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+        <TextView
+            android:id="@+id/txt_myorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="50dp"
-            app:srcCompat="@drawable/ic_new_order" />
+            android:text="My order"
+            android:textColor="@color/black"
+            android:textSize="26sp" />
 
-        <ImageView
-            android:id="@+id/img_confirm"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            app:srcCompat="@drawable/ic_order_success" />
+        <FrameLayout
+            android:id="@+id/frame1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp">
 
-        <ImageView
-            android:id="@+id/img_feedback"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="end"
-            android:layout_marginRight="40dp"
-            app:srcCompat="@drawable/ic_feedback" />
+            <ImageView
+                android:id="@+id/img_confirm"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity=""
+                android:layout_marginLeft="50dp"
+                app:srcCompat="@drawable/ic_new_order" />
 
-    </FrameLayout>
+            <ImageView
+                android:id="@+id/img_ship"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/ic_order_success" />
 
+            <ImageView
+                android:id="@+id/img_feedback"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="end"
+                android:layout_marginRight="40dp"
+                app:srcCompat="@drawable/ic_feedback" />
+
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <RelativeLayout
         android:id="@+id/layout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
 
-        <ListView
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_account"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></ListView>
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/grey"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:id="@+id/txt_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="20dp"
+                android:text="My account"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/img_account"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ic_continue"
+                tools:ignore="RtlHardcoded" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_help"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/grey"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:id="@+id/txt_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="20dp"
+                android:text="Help"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:id="@+id/img_help"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ic_continue"
+                tools:ignore="RtlHardcoded" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_about"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="125dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/grey"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:id="@+id/txt_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="20dp"
+                android:text="About us"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/img_about"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ic_continue"
+                tools:ignore="RtlHardcoded" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_logout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="185dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/grey"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:id="@+id/txt_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="20dp"
+                android:text="Log out"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/img_logout"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ic_continue"
+                tools:ignore="RtlHardcoded" />
+        </androidx.cardview.widget.CardView>
 
 
     </RelativeLayout>
