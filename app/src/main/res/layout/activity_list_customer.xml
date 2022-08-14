@@ -50,11 +50,7 @@
             tools:listitem="@layout/item_customer">
         </androidx.recyclerview.widget.RecyclerView>
 
-
     </LinearLayout>
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
