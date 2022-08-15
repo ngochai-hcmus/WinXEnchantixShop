@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.winxenchantixshop.Activity.Chat.ChatActivity
 import com.example.winxenchantixshop.Activity.Product.CartActivity
+import com.example.winxenchantixshop.Activity.Product.CategoryActivity
 import com.example.winxenchantixshop.Activity.Product.SearchActivity
 import com.example.winxenchantixshop.Adapter.ProductAdapter
 import com.example.winxenchantixshop.DTO.Product
@@ -33,6 +34,8 @@ private lateinit var productAdapter : ProductAdapter
 private lateinit var productRecyclerView: RecyclerView
 private lateinit var listProduct: ArrayList<Product>
 private lateinit var btnSearch: FloatingActionButton
+
+private lateinit var btnCategory: FloatingActionButton
 private lateinit var btnCart: ImageButton
 private lateinit var searchView: EditText
 private lateinit var chatimage: ImageView
@@ -100,6 +103,12 @@ class HomePageFragment : Fragment() {
             val intent = Intent(this@HomePageFragment.requireContext(),ChatActivity::class.java)
             startActivity(intent)
 
+        }
+
+        btnCategory = view.findViewById(R.id.btn_category)
+        btnCategory.setOnClickListener{
+            val intent = Intent(this@HomePageFragment.requireContext(), CategoryActivity::class.java)
+            startActivity(intent)
         }
 
 
