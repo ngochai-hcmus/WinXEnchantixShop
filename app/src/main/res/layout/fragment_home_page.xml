@@ -40,7 +40,6 @@
             android:id="@+id/searching_bar"
             android:layout_width="279dp"
             android:layout_height="55dp"
-            android:hint="Enter the product you are looking for"
             android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
