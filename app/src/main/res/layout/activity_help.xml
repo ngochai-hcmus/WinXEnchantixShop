@@ -33,8 +33,8 @@
         app:srcCompat="@drawable/support" />
 
     <FrameLayout
-        android:layout_width="409dp"
-        android:layout_height="244dp"
+        android:layout_width="411dp"
+        android:layout_height="214dp"
         android:layout_marginTop="645dp"
         android:background="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,7 +45,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <ImageView
-            android:layout_width="190dp"
+            android:layout_width="151dp"
             android:layout_height="match_parent"
 
             app:layout_constraintBottom_toBottomOf="parent"
@@ -57,11 +57,36 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:layout_marginLeft="190dp"
-            android:layout_marginTop="30dp"
-            android:text="Address: 127 Nguyen Van Cu, Ward 4, District 5, Ho Chi Minh City:"
-            android:textSize="20sp"></TextView>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="155dp"
+            android:layout_marginTop="10dp"
+            android:text="Frequently asked questions"
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="185dp"
+            android:layout_marginTop="55dp"
+            android:text="How to register ?"
+            android:textSize="17sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="185dp"
+            android:layout_marginTop="90dp"
+            android:text="How to recover password ?"
+            android:textSize="17sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="185dp"
+            android:layout_marginTop="125dp"
+            android:text="How is the process of posting products for sale ?"
+            android:textSize="17sp"></TextView>
 
     </FrameLayout>
 
