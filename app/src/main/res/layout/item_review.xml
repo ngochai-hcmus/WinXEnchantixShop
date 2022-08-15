@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/layout_reply">
+    <FrameLayout
+        android:id="@+id/frame_info"
+        android:layout_width="391dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/reply_review_toolbar">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_profile"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            app:civ_border_color="@color/black"
+            app:civ_border_width="0dp"
+            tools:ignore="MissingClass" />
+
+        <TextView
+            android:id="@+id/txt_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:text="Product name"
+            android:textSize="16sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_info_review"
+        android:layout_width="match_parent"
+        android:layout_height="118dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/frame_info">
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="5dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/txt_review_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="75dp"
+            android:maxLines="4"
+            android:text="Add 1 actual product image, objectively evaluate the product"
+            android:textSize="14sp"
+            android:textStyle="bold|italic" />
+
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_reply"
+        android:layout_width="365dp"
+        android:layout_height="217dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="@color/grey"
+        app:cardCornerRadius="20dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_add_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_add_image"
+            app:fabCustomSize="80dp"
+            app:maxImageSize="70dp"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInput_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginRight="25dp"
+            android:background="@color/grey"
+            android:hint="Enter product quality rating here"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="264dp" />
+
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="2dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="25dp"
+            android:background="@color/grey"></LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/layout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="100dp"
+            android:backgroundTint="@color/pink"
+            android:text="Cancel"
+            android:textColor="@color/white"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_review"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:backgroundTint="@color/pink"
+            android:text="Review"
+            android:textColor="@color/white"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+</LinearLayout>
