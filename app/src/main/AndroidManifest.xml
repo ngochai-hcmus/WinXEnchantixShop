@@ -14,11 +14,24 @@
         android:theme="@style/Theme.WinXEnchantixShop"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.AdminSeller.ListSellerActivity"
+            android:name=".Activity.Chat.ChatSellerActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.Chat.ChatListActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".Activity.Chat.ChatActivity"
+            android:exported="true">
+
+
+
+        </activity>
+        <activity
+            android:name=".Activity.AdminSeller.ListSellerActivity"
+            android:exported="true"></activity>
+        <activity
             android:name=".Activity.AdminSeller.ListCustomerActivity"
-            android:exported="false" />
+            android:exported="true"></activity>
         <activity
             android:name=".Activity.AdminSeller.MyProductActivity"
             android:exported="false" />
@@ -66,6 +79,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
+
         </activity>
         <activity
             android:name=".Activity.Product.ProductInformationActivity"
@@ -73,11 +89,9 @@
         <activity
             android:name=".Activity.Product.SearchActivity"
             android:exported="false" />
-
         <activity
             android:name=".Activity.AdminSeller.ConfirmActivity"
             android:exported="false" />
-
         <activity
             android:name=".Activity.Product.PostProductActivity"
             android:exported="false" />

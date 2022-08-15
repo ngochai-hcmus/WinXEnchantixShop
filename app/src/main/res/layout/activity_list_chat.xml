@@ -24,14 +24,14 @@
         app:title="Chat List" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleView_list_product"
-        android:layout_width="392dp"
-        android:layout_height="664dp"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/recycleView_list_chat"
+        android:layout_width="409dp"
+        android:layout_height="668dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/item_customer" />
+        tools:listitem="@layout/item_chat_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

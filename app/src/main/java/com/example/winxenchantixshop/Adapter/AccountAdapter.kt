@@ -46,6 +46,5 @@ class AccountAdapter(private val AccountList: ArrayList<Account>) : RecyclerView
         val Account_Email : TextView = itemview.findViewById(R.id.AccountEmail)
         val Account_Phone : TextView = itemview.findViewById(R.id.AccountPhone)
 
-
     }
 }

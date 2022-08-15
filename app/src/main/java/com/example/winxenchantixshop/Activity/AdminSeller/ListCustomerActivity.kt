@@ -44,7 +44,6 @@ class ListCustomerActivity : AppCompatActivity() {
 
                         AccountArrayList.add(account!!)
 
-
                     }
 
                     AccountRecyclerview.adapter = AccountAdapter(AccountArrayList)
