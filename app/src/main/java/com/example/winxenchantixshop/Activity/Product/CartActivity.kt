@@ -54,9 +54,14 @@ class CartActivity : AppCompatActivity() {
         itemTouchHelper.attachToRecyclerView(itemRecyclerView)
 
         binding.buttonOrder.setOnClickListener {
-            intent = Intent(this, OrderActivity::class.java)
-            intent.putExtra("listProduct", listProduct)
-            startActivity(intent)
+            if (listProduct.isNotEmpty()) {
+                intent = Intent(this, OrderActivity::class.java)
+                intent.putExtra("listProduct", listProduct)
+                startActivity(intent)
+            }
+            else {
+                Toast.makeText(this, "Please select at least 1 item", Toast.LENGTH_SHORT).show()
+            }
         }
 
     }
