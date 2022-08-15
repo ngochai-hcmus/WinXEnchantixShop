@@ -103,16 +103,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <RadioGroup
-        android:id="@+id/Type_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/register_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </RadioGroup>
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/register_button"
         android:layout_width="0dp"

@@ -18,13 +18,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:title="About Us"></androidx.appcompat.widget.Toolbar>
+        app:title="Help"></androidx.appcompat.widget.Toolbar>
 
 
     <ImageView
         android:id="@+id/img1"
-        android:layout_width="402dp"
-        android:layout_height="212dp"
+        android:layout_width="411dp"
+        android:layout_height="260dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +33,67 @@
         app:srcCompat="@drawable/support" />
 
     <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="407dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="290dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.081">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="15dp"
+            android:text="Which page are you having trouble on?"
+            android:textColor="@color/black"
+            android:textSize="18dp"></TextView>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_help"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/editText2"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </FrameLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/register_confirm_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="100dp"
+        android:background="@color/grey"
+        android:hint="Enter here for support system"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="411dp"
         android:layout_height="214dp"
         android:layout_marginTop="645dp"
@@ -85,9 +146,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="185dp"
             android:layout_marginTop="125dp"
-            android:text="How is the process of posting products for sale ?"
+            android:text="How is the process of posting products for sale ? ? ?"
             android:textSize="17sp"></TextView>
 
     </FrameLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
