@@ -33,7 +33,7 @@ class PostProductActivity : AppCompatActivity() {
 
     private val pickImage = 100
     lateinit var imageProduct: ImageView
-
+    lateinit var image: String
     lateinit var productName : String
     lateinit var category : String
     lateinit var price : String
@@ -49,6 +49,7 @@ class PostProductActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().getReference("Product")
 
         imageProduct = binding.productImg
+        image = ""
 
         binding.btnAddImg.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
@@ -62,7 +63,32 @@ class PostProductActivity : AppCompatActivity() {
             amount  = binding.textInputLayoutAmount.editText?.text.toString()
             description  = binding.textInputLayoutDescription.editText?.text.toString()
 
-            uploadData()
+            if(image == ""){
+                Toast.makeText(this,"You need to choose image!",Toast.LENGTH_SHORT).show()
+            }
+            if(productName.isEmpty()){
+                binding.textInputLayoutProductName.error = "*Require"
+            }
+            if(category.isEmpty()){
+                binding.textInputLayoutCategory.error = "*Require"
+            }
+            if(price.isEmpty()){
+                binding.textInputLayoutPrice.error = "*Require"
+            }
+            if(amount.isEmpty()){
+                binding.textInputLayoutAmount.error = "*Require"
+            }
+            if(description.isEmpty()){
+                binding.textInputLayoutDescription.error = "*Require"
+            }
+
+            if(image != "" && productName.isNotEmpty()
+                && category.isNotEmpty() && price.isNotEmpty()
+                && amount.isNotEmpty() && description.isNotEmpty()){
+                uploadData()
+            }
+
+
 
         }
 
@@ -78,15 +104,11 @@ class PostProductActivity : AppCompatActivity() {
         if (resultCode == RESULT_OK && requestCode == pickImage) {
             imageUri = data?.data!!
             imageProduct.setImageURI(imageUri)
+            uploadImage()
         }
     }
 
-    private fun uploadData() {
-        val progressDialog = ProgressDialog(this)
-        progressDialog.setMessage("Uploading File ...")
-        progressDialog.setCancelable(false)
-        progressDialog.show()
-
+    private fun uploadImage() {
         val formatter = SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.getDefault())
         val now = Date()
         val fileName = formatter.format(now)
@@ -95,36 +117,34 @@ class PostProductActivity : AppCompatActivity() {
         storage.putFile(imageUri).addOnSuccessListener {
             imageProduct.setImageURI(null)
             Toast.makeText(this, "Successful Uploaded", Toast.LENGTH_SHORT).show()
-            if (progressDialog.isShowing) progressDialog.dismiss()
 
-            val localFile = File.createTempFile(fileName,"")
+            val localFile = File.createTempFile(fileName, "")
             storage.getFile(localFile).addOnSuccessListener {
-                if(progressDialog.isShowing)
-                    progressDialog.dismiss()
-
                 val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
                 imageProduct.setImageBitmap(bitmap)
-
             }
 
             storage.downloadUrl.addOnSuccessListener {
-                val product = Product(it.toString(), productName, category, price, amount, description)
+                image = it.toString()
 
-                database.child(productName.toString()).setValue(product).addOnSuccessListener {
-                    Toast.makeText(this, "Successful Saved", Toast.LENGTH_SHORT).show()
-
-                }.addOnFailureListener {
-                    Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-
-                }
             }.addOnFailureListener {
-                if (progressDialog.isShowing) progressDialog.dismiss()
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-
             }
+        }
+    }
 
+    private fun uploadData() {
+
+        val product = Product(image, productName, category, price, amount, description)
+
+        database.child(productName.toString()).setValue(product).addOnSuccessListener {
+            Toast.makeText(this, "Successful Saved", Toast.LENGTH_SHORT).show()
+
+        }.addOnFailureListener {
+            Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
 
         }
+
     }
 
 

@@ -2,51 +2,86 @@ package com.example.winxenchantixshop.Activity.AdminSeller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.winxenchantixshop.Activity.Util.SwipeToDeleteCallback
 import com.example.winxenchantixshop.Adapter.AccountAdapter
 import com.example.winxenchantixshop.Adapter.ProductAdapter
+import com.example.winxenchantixshop.Adapter.UserInforAdapter
 import com.example.winxenchantixshop.DTO.Account
 import com.example.winxenchantixshop.DTO.Product
 import com.example.winxenchantixshop.DTO.ProductView
+import com.example.winxenchantixshop.DTO.UserInfor
 import com.example.winxenchantixshop.databinding.ActivityListCustomerBinding
 import com.example.winxenchantixshop.R
 import com.google.firebase.database.*
 
 class ListCustomerActivity : AppCompatActivity() {
 
-    private lateinit var dbref: DatabaseReference
-    private lateinit var AccountRecyclerview: RecyclerView
-    private lateinit var AccountArrayList: ArrayList<Account>
+    private lateinit var db_ref: DatabaseReference
+    private lateinit var UserRecyclerview: RecyclerView
+    private lateinit var UserAdapter: UserInforAdapter
+    private lateinit var UserList: ArrayList<UserInfor>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_customer)
-        AccountRecyclerview = findViewById(R.id.recycle_list_customer)
-        AccountRecyclerview.layoutManager = LinearLayoutManager(this)
-        AccountRecyclerview.setHasFixedSize(true)
+        UserRecyclerview = findViewById(R.id.recycle_list_customer)
+        UserRecyclerview.layoutManager = LinearLayoutManager(this)
+        UserRecyclerview.setHasFixedSize(true)
 
-        AccountArrayList = arrayListOf<Account>()
-        getAccountData()
+        UserList = arrayListOf<UserInfor>()
+        UserAdapter = UserInforAdapter(UserList)
+        getUserData()
 
+        val swipeToDeleteCallback = object : SwipeToDeleteCallback() {
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val pos : Int = viewHolder.adapterPosition
+                val userToDelete : UserInfor = UserList.get(pos)
+                val name = userToDelete.name.toString()
+                deleteUser(name)
+            }
+        }
 
+        val itemTouchHelper = ItemTouchHelper(swipeToDeleteCallback)
+        itemTouchHelper.attachToRecyclerView(UserRecyclerview)
     }
 
-    private fun getAccountData() {
-        dbref = FirebaseDatabase.getInstance().getReference("Account")
-        val okQuery = dbref.orderByChild("type").equalTo("customer")
+    private fun deleteUser(name: String) {
+        UserList = arrayListOf<UserInfor>()
+        db_ref = FirebaseDatabase.getInstance().getReference("UserInfor")
+
+        db_ref.child(name).removeValue().addOnSuccessListener {
+            Toast.makeText(applicationContext, "Deleted 1 item", Toast.LENGTH_LONG).show()
+        }.addOnFailureListener {
+            Toast.makeText(applicationContext, "Failed to delete, try again", Toast.LENGTH_LONG).show()
+        }
+
+        db_ref = FirebaseDatabase.getInstance().getReference("Account")
+        db_ref.child(name).removeValue().addOnSuccessListener {
+            Toast.makeText(applicationContext, "Deleted 1 item", Toast.LENGTH_LONG).show()
+        }.addOnFailureListener {
+            Toast.makeText(applicationContext, "Failed to delete, try again", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun getUserData() {
+        UserList = arrayListOf<UserInfor>()
+        db_ref = FirebaseDatabase.getInstance().getReference("UserInfor")
+        val okQuery = db_ref.orderByChild("type").equalTo("customer")
         okQuery.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                UserList.clear()
                 if (snapshot.exists()) {
-                    for (accountSnapshot in snapshot.children) {
-                        val account = accountSnapshot.getValue(Account::class.java)
-
-                        AccountArrayList.add(account!!)
-
+                    for (userSnapshot in snapshot.children) {
+                        val user = userSnapshot.getValue(UserInfor::class.java)
+                        UserList.add(user!!)
                     }
 
-                    AccountRecyclerview.adapter = AccountAdapter(AccountArrayList)
+                    UserRecyclerview.adapter = UserInforAdapter(UserList)
                 }
             }
 

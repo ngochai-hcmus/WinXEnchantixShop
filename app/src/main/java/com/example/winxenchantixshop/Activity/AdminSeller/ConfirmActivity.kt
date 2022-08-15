@@ -90,6 +90,8 @@ class ConfirmActivity  : AppCompatActivity() {
                 }
 
             })
+
+
             db_ref = FirebaseDatabase.getInstance().getReference("WaitingOrder").child(billID)
                     .child("ClientInfo").child("UserID")
 
@@ -109,7 +111,8 @@ class ConfirmActivity  : AppCompatActivity() {
                 }
 
             })
-
+            db_ref = FirebaseDatabase.getInstance().getReference("WaitingOrder").child(billID)
+            db_ref.removeValue()
 
             finish()
 

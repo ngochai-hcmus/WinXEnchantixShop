@@ -12,12 +12,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.winxenchantixshop.Adapter.ItemAdapter
+import com.example.winxenchantixshop.Adapter.ItemNewOrderCustomerAdapter
 import com.example.winxenchantixshop.Adapter.ProductAdapter
 import com.example.winxenchantixshop.DAO.AccountDAO
-import com.example.winxenchantixshop.DTO.Account
-import com.example.winxenchantixshop.DTO.Product
-import com.example.winxenchantixshop.DTO.ProductView
-import com.example.winxenchantixshop.DTO.User
+import com.example.winxenchantixshop.DTO.*
 import com.example.winxenchantixshop.R
 import com.example.winxenchantixshop.databinding.ActivityOrderBinding
 import com.example.winxenchantixshop.databinding.ActivityProductInformationBinding
@@ -80,6 +78,7 @@ class OrderActivity : AppCompatActivity() {
 
             db_ref = FirebaseDatabase.getInstance().getReference("WaitingOrder")
                 .child("${currentTime.format(formatBill)}${currentUser!!.dropLast(10)}")
+
             for (i in listProduct) {
                 db_ref.child("List").child(i.productName.toString()).setValue(i)
             }
@@ -91,6 +90,8 @@ class OrderActivity : AppCompatActivity() {
             db_ref.child("ClientInfo").child("location").setValue(location)
             db_ref.child("ClientInfo").child("UserID").setValue(currentUser!!.dropLast(10))
 
+            db_ref = FirebaseDatabase.getInstance().getReference("Cart").child(currentUser!!.dropLast(10))
+            db_ref.removeValue()
 
             intent = Intent(this, SuccessfulOrderActivity::class.java)
             startActivity(intent)

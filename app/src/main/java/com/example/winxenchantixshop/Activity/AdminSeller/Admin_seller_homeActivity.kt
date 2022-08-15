@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.example.winxenchantixshop.Activity.Chat.ChatListActivity
 import com.example.winxenchantixshop.Activity.MainActivity
 import com.example.winxenchantixshop.Activity.Product.PostProductActivity
+import com.example.winxenchantixshop.DTO.User
 import com.example.winxenchantixshop.databinding.FragmentHomePageSellerBinding
 
 class Admin_seller_homeActivity : AppCompatActivity() {
@@ -20,6 +21,9 @@ class Admin_seller_homeActivity : AppCompatActivity() {
 
         binding = FragmentHomePageSellerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val emailUser = intent.getStringExtra("EmailUser").toString()
+        User.Email(emailUser)
 
         binding.layoutMyproduct.setOnClickListener {
             val intent = Intent(this, MyProductActivity::class.java);
@@ -106,6 +110,14 @@ class Admin_seller_homeActivity : AppCompatActivity() {
         binding.imgChat.setOnClickListener {
             val intent = Intent(this, ChatListActivity::class.java);
             intent.putExtra("email",email.toString())
+            startActivity(intent)
+        }
+        binding.imgBtnConvert.setOnClickListener {
+            val intent = Intent(this, ConversionActivity::class.java);
+            startActivity(intent)
+        }
+        binding.imgBtnEditInfo.setOnClickListener {
+            val intent = Intent(this, EditProfileActivity::class.java);
             startActivity(intent)
         }
     }

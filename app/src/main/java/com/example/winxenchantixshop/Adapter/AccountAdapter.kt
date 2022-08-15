@@ -1,10 +1,13 @@
 package com.example.winxenchantixshop.Adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.winxenchantixshop.Activity.Product.ProductInformationActivity
 import com.example.winxenchantixshop.DTO.Account
 import com.example.winxenchantixshop.R
 
@@ -15,7 +18,7 @@ class AccountAdapter(private val AccountList: ArrayList<Account>) : RecyclerView
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AccountViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.item_customer,
+            R.layout.item_seller,
             parent,false
         )
         return AccountViewHolder(itemView)
@@ -42,9 +45,9 @@ class AccountAdapter(private val AccountList: ArrayList<Account>) : RecyclerView
 
     class AccountViewHolder(itemview:View) : RecyclerView.ViewHolder(itemview){
 
-        val Account_Name : TextView = itemview.findViewById(R.id.AccountName)
-        val Account_Email : TextView = itemview.findViewById(R.id.AccountEmail)
-        val Account_Phone : TextView = itemview.findViewById(R.id.AccountPhone)
+        val Account_Name : TextView = itemview.findViewById(R.id.Name)
+        val Account_Email : TextView = itemview.findViewById(R.id.Email)
+        val Account_Phone : TextView = itemview.findViewById(R.id.Phone)
 
     }
 }
