@@ -37,5 +37,16 @@ class ConversionActivity : AppCompatActivity() {
             .addOnFailureListener {
                 Toast.makeText(this, "Update Failed!!!", Toast.LENGTH_SHORT).show()
             }
+
+        database = FirebaseDatabase.getInstance().getReference("UserInfor")
+        val user = mapOf<String,String>(
+            "type" to "seller"
+        )
+        database.child(userEmail).updateChildren(user).addOnSuccessListener {
+            Toast.makeText(this, "Update successful!!!", Toast.LENGTH_SHORT).show()
+        }
+            .addOnFailureListener {
+                Toast.makeText(this, "Update Failed!!!", Toast.LENGTH_SHORT).show()
+            }
     }
 }
