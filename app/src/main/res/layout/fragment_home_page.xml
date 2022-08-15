@@ -135,7 +135,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/imgBtn_deals"
+                android:id="@+id/btn_deals"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:fabCustomSize="70dp"
@@ -185,7 +185,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/imgBtn_category"
+                android:id="@+id/btn_category"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="15dp"

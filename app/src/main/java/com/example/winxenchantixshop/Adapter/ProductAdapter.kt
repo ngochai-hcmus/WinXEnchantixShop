@@ -54,6 +54,7 @@ class ProductAdapter(private var listProduct : ArrayList<Product>) : RecyclerVie
         var type = ""
         db_ref.child(currentUser).child("type").get().addOnSuccessListener {
             type = it.value.toString()
+            Log.e("firebase", type)
         }.addOnFailureListener{
             Log.e("firebase", "Error getting data", it)
         }
