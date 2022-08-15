@@ -134,7 +134,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView_list_product"
         android:layout_width="374dp"
-        android:layout_height="wrap_content"
+        android:layout_height="116dp"
         android:layout_marginLeft="20dp" />
 
 
