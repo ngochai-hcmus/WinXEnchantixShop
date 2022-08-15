@@ -1,5 +1,6 @@
 package com.example.winxenchantixshop.Activity.Product
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -37,6 +38,12 @@ class OrderConfirmDetailActivity : AppCompatActivity() {
         productAdapter = ItemAdapter(listProduct)
         itemRecyclerView.adapter = productAdapter
 
+
+        binding.buttonReceived.setOnClickListener {
+            intent = Intent(this, ReviewActivity::class.java)
+            intent.putExtra("billID", billId)
+            startActivity(intent)
+        }
 
     }
 
