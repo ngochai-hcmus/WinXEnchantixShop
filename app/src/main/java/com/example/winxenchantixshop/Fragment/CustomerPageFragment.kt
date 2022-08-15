@@ -61,7 +61,7 @@ class CustomerPageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnConfirm = view.findViewById(R.id.img_confirm)
-        btnMyProduct = view.findViewById(R.id.img_ship)
+        btnMyProduct = view.findViewById(R.id.image_ship)
 
         btnConfirm.setOnClickListener{
             val intent = Intent(this@CustomerPageFragment.requireContext(), NewOrderActivity::class.java)

@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.winxenchantixshop.Activity.Product.BrandActivity
 import com.example.winxenchantixshop.Activity.Product.CartActivity
 import com.example.winxenchantixshop.Activity.Product.SearchActivity
 import com.example.winxenchantixshop.Adapter.ProductAdapter
@@ -31,6 +32,7 @@ private lateinit var productAdapter : ProductAdapter
 private lateinit var productRecyclerView: RecyclerView
 private lateinit var listProduct: ArrayList<Product>
 private lateinit var btnSearch: FloatingActionButton
+private lateinit var btnBrand: FloatingActionButton
 private lateinit var btnCart: ImageButton
 private lateinit var searchView: EditText
 
@@ -71,7 +73,7 @@ class HomePageFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(ProductView::class.java)
 
-        viewModel.allUsers.observe(viewLifecycleOwner, Observer {
+        viewModel.allProducts.observe(viewLifecycleOwner, Observer {
 
             productAdapter.updateProductList(it)
         })
@@ -93,6 +95,11 @@ class HomePageFragment : Fragment() {
 
         }
 
+        btnBrand = view.findViewById(R.id.btn_brand)
+        btnBrand.setOnClickListener{
+            val intent = Intent(this@HomePageFragment.requireContext(), BrandActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }
