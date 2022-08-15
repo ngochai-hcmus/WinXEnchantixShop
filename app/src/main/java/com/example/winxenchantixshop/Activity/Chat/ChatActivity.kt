@@ -96,6 +96,7 @@ class ChatActivity : AppCompatActivity() {
         database2.addValueEventListener(object : ValueEventListener{
 
             override fun onDataChange(snapshot: DataSnapshot) {
+                chatList.clear()
                 if(snapshot.exists()){
 
                     for (chatSnapshot in snapshot.children){

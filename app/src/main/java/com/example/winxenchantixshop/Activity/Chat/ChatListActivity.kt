@@ -32,6 +32,7 @@ class ChatListActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().getReference("Chat")
         database.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+                chatList.clear()
                 if(snapshot.exists()){
                     for (ChatSnapshot in snapshot.children){
                         val name = ChatSnapshot.key.toString() // email cua account
