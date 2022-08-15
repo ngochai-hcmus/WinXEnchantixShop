@@ -15,12 +15,17 @@ import com.example.winxenchantixshop.Activity.Chat.ChatListActivity
 import com.example.winxenchantixshop.Activity.Chat.ChatSellerActivity
 import com.example.winxenchantixshop.Adapter.ChatListAdapter.*
 import com.example.winxenchantixshop.DTO.Chat
+import com.example.winxenchantixshop.DTO.UserInfor
 import com.example.winxenchantixshop.R
+import com.google.firebase.database.*
+import com.squareup.picasso.Picasso
 
 class ChatListAdapter(private val context: Context,private val ChatList: ArrayList<String>, private var Myemail: String):
     RecyclerView.Adapter<ChatListAdapter.ViewHolder>() {
 
-
+    private lateinit var db_ref : DatabaseReference
+    private lateinit var listUser: ArrayList<UserInfor>
+    lateinit var image : String
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chat_list,parent,false)
@@ -29,7 +34,9 @@ class ChatListAdapter(private val context: Context,private val ChatList: ArrayLi
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val email = ChatList[position]
+
         holder.useremail.text = email.toString()
+
         holder.layoutchat.setOnClickListener {
             val intent = Intent(context ,ChatSellerActivity::class.java)
             intent.putExtra("UserEmail",email)

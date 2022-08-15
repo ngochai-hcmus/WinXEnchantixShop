@@ -113,8 +113,15 @@ class Admin_seller_homeActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imgBtnConvert.setOnClickListener {
-            val intent = Intent(this, ConversionActivity::class.java);
-            startActivity(intent)
+            if (type.toString() == "admin"){
+                Toast.makeText(this, "success 1", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, ConversionActivity::class.java);
+                startActivity(intent)
+            }
+            else
+            {
+                Toast.makeText(this, "You are not authorized to view this listing ", Toast.LENGTH_SHORT).show()
+            }
         }
         binding.imgBtnEditInfo.setOnClickListener {
             val intent = Intent(this, EditProfileActivity::class.java);

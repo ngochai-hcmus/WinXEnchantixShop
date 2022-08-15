@@ -15,9 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.winxenchantixshop.Activity.Chat.ChatActivity
-import com.example.winxenchantixshop.Activity.Product.CartActivity
-import com.example.winxenchantixshop.Activity.Product.CategoryActivity
-import com.example.winxenchantixshop.Activity.Product.SearchActivity
+import com.example.winxenchantixshop.Activity.Product.*
 import com.example.winxenchantixshop.Adapter.ProductAdapter
 import com.example.winxenchantixshop.DTO.Product
 import com.example.winxenchantixshop.DTO.ProductView
@@ -35,6 +33,8 @@ private lateinit var productRecyclerView: RecyclerView
 private lateinit var listProduct: ArrayList<Product>
 private lateinit var btnSearch: FloatingActionButton
 
+private lateinit var btnDeals: FloatingActionButton
+private lateinit var btnBrand: FloatingActionButton
 private lateinit var btnCategory: FloatingActionButton
 private lateinit var btnCart: ImageButton
 private lateinit var searchView: EditText
@@ -108,6 +108,18 @@ class HomePageFragment : Fragment() {
         btnCategory = view.findViewById(R.id.btn_category)
         btnCategory.setOnClickListener{
             val intent = Intent(this@HomePageFragment.requireContext(), CategoryActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnDeals = view.findViewById(R.id.btn_deals)
+        btnDeals.setOnClickListener {
+            val intent = Intent(this@HomePageFragment.requireContext(), DealActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnBrand = view.findViewById(R.id.btn_brand)
+        btnBrand.setOnClickListener{
+            val intent = Intent(this@HomePageFragment.requireContext(), BrandActivity::class.java)
             startActivity(intent)
         }
 

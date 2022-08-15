@@ -47,6 +47,7 @@ class EditProfileActivity : AppCompatActivity() {
 
         userName = User.Email("")!!.toString()
         userID = User.Email("")!!.dropLast(10).toString()
+
         getUserInfor(userName)
 
         imageProduct = binding.productImg
@@ -81,11 +82,11 @@ class EditProfileActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-            if (resultCode == AppCompatActivity.RESULT_OK && requestCode == pickImage) {
-                imageUri = data?.data!!
-                imageProduct.setImageURI(imageUri)
+        if (resultCode == AppCompatActivity.RESULT_OK && requestCode == pickImage) {
+            imageUri = data?.data!!
+            imageProduct.setImageURI(imageUri)
 
-                uploadImage()
+            uploadImage()
         }
 
     }
