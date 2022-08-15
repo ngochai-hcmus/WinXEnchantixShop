@@ -47,12 +47,16 @@ class LoadLoginActivity : AppCompatActivity() {
                 else if (type.toString() == "seller"){
                     Toast.makeText(this, "User is seller!!!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, Admin_seller_homeActivity::class.java);
+                    intent.putExtra("email",email.toString())
+                    intent.putExtra("type",type.toString())
                     startActivity(intent)
                 }
                 else if (type.toString() == "admin")
                 {
                     Toast.makeText(this, "User is Admin!!!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, Admin_seller_homeActivity::class.java);
+                    intent.putExtra("email",email.toString())
+                    intent.putExtra("type",type.toString())
                     startActivity(intent)
                 }
             }

@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:ignore="ExtraText">
+    tools:ignore="ExtraText"
+    tools:context=".Activity.Product.DealActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_deal"
@@ -29,20 +30,23 @@
             android:layout_width="230dp"
             android:layout_height="120dp"
             android:src="@drawable/ic_sale"
-            tools:layout_editor_absoluteX="86dp"
-            tools:layout_editor_absoluteY="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle_sale"
-        android:layout_width="390dp"
-        android:layout_height="509dp"
+        android:layout_width="382dp"
+        android:layout_height="407dp"
         app:layout_constraintBottom_toTopOf="@+id/layout_bottom"
         app:layout_constraintTop_toBottomOf="@+id/layout_homepage"
-        tools:layout_editor_absoluteX="0dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_bottom"
@@ -52,28 +56,30 @@
         android:background="@color/pink"
         app:layout_constraintTop_toBottomOf="@+id/recycle_sale"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp">
+        tools:layout_editor_absoluteX="-3dp">
 
         <ImageView
             android:id="@+id/img_sale1"
             android:layout_width="129dp"
             android:layout_height="108dp"
-            android:layout_marginStart="76dp"
-            android:layout_marginBottom="4dp"
             android:src="@drawable/ic_sale_1"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.125"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
         <ImageView
             android:id="@+id/img_sale2"
             android:layout_width="119dp"
             android:layout_height="117dp"
-            android:layout_marginEnd="60dp"
             android:layout_marginBottom="4dp"
             android:src="@drawable/ic_sale_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.744"
+            app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

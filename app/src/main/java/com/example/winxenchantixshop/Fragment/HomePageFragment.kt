@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.winxenchantixshop.Activity.Chat.ChatActivity
 import com.example.winxenchantixshop.Activity.Product.CartActivity
 import com.example.winxenchantixshop.Activity.Product.SearchActivity
 import com.example.winxenchantixshop.Adapter.ProductAdapter
@@ -33,7 +35,7 @@ private lateinit var listProduct: ArrayList<Product>
 private lateinit var btnSearch: FloatingActionButton
 private lateinit var btnCart: ImageButton
 private lateinit var searchView: EditText
-
+private lateinit var chatimage: ImageView
 
 class HomePageFragment : Fragment() {
 
@@ -93,6 +95,12 @@ class HomePageFragment : Fragment() {
 
         }
 
+        chatimage = view.findViewById(R.id.img_chat_customer)
+        chatimage.setOnClickListener {
+            val intent = Intent(this@HomePageFragment.requireContext(),ChatActivity::class.java)
+            startActivity(intent)
+
+        }
 
 
     }

@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.DiffUtil
@@ -56,6 +57,7 @@ class ProductAdapter(private var listProduct : ArrayList<Product>) : RecyclerVie
         }.addOnFailureListener{
             Log.e("firebase", "Error getting data", it)
         }
+
 
         db_ref = FirebaseDatabase.getInstance().getReference("Product")
 

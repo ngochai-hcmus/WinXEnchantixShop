@@ -11,6 +11,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.winxenchantixshop.Activity.Product.NewOrderActivity
 import com.example.winxenchantixshop.Activity.Product.OrderConfirmActivity
+import com.example.winxenchantixshop.Activity.Product.ReviewListActivity
 import com.example.winxenchantixshop.Activity.Product.SearchActivity
 import com.example.winxenchantixshop.Adapter.NoticeCustomerAdapter
 import com.example.winxenchantixshop.DTO.NoticeCustomer
@@ -39,6 +40,8 @@ class CustomerPageFragment : Fragment() {
     private var param2: String? = null
     private lateinit var btnConfirm: ImageView
     private lateinit var btnMyProduct: ImageView
+    private lateinit var btnReview: ImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +64,8 @@ class CustomerPageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnConfirm = view.findViewById(R.id.img_confirm)
-        btnMyProduct = view.findViewById(R.id.img_ship)
+        btnMyProduct = view.findViewById(R.id.image_ship)
+        btnReview = view.findViewById(R.id.image_feedback)
 
         btnConfirm.setOnClickListener{
             val intent = Intent(this@CustomerPageFragment.requireContext(), NewOrderActivity::class.java)
@@ -71,7 +75,10 @@ class CustomerPageFragment : Fragment() {
             val intent = Intent(this@CustomerPageFragment.requireContext(), OrderConfirmActivity::class.java)
             startActivity(intent)
         }
-
+        btnReview.setOnClickListener{
+            val intent = Intent(this@CustomerPageFragment.requireContext(), ReviewListActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

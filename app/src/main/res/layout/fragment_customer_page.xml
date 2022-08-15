@@ -72,14 +72,14 @@
                 app:srcCompat="@drawable/ic_new_order" />
 
             <ImageView
-                android:id="@+id/img_ship"
+                android:id="@+id/image_ship"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 app:srcCompat="@drawable/ic_order_success" />
 
             <ImageView
-                android:id="@+id/img_feedback"
+                android:id="@+id/image_feedback"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="end"

@@ -14,6 +14,12 @@
         android:theme="@style/Theme.WinXEnchantixShop"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.AdminSeller.UserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AdminSeller.EditProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.AdminSeller.ListSellerActivity"
             android:exported="false" />
         <activity
@@ -27,22 +33,22 @@
             android:exported="false" />
         <activity
             android:name=".Activity.AdminSeller.ConversionActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.AdminSeller.ListReviewActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.AdminSeller.NewOrderActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.AdminSeller.OrderHistoryActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.AdminSeller.PeplyReviewActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.LoginRegister.ForgetPasswordActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.LoginRegister.LoadLoginActivity"
             android:exported="false" />
@@ -57,7 +63,7 @@
             android:exported="false" />
         <activity
             android:name=".Activity.LoginRegister.RegisterActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".Activity.LoginRegister.LoginActivity"
             android:exported="true">
@@ -73,11 +79,9 @@
         <activity
             android:name=".Activity.Product.SearchActivity"
             android:exported="false" />
-
         <activity
             android:name=".Activity.AdminSeller.ConfirmActivity"
             android:exported="false" />
-
         <activity
             android:name=".Activity.Product.PostProductActivity"
             android:exported="false" />
@@ -111,6 +115,28 @@
         <activity
             android:name=".Activity.Product.OrderConfirmDetailActivity"
             android:exported="false" />
+        <activity
+            android:name=".Activity.Product.BrandActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Product.DealActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Product.ReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Product.ReviewListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Chat.ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Chat.ChatListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Chat.ChatSellerActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

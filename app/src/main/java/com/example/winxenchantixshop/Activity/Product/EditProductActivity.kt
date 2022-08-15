@@ -140,9 +140,9 @@ class EditProductActivity : AppCompatActivity() {
 
     private fun uploadData() {
         val product = Product(imageUrl, productName, category, price, amount, description)
+        deleteProduct(name)
 
         database.child(productName).setValue(product).addOnSuccessListener {
-            deleteProduct(name)
             Toast.makeText(this, "Successful Saved", Toast.LENGTH_SHORT).show()
 
         }.addOnFailureListener {
