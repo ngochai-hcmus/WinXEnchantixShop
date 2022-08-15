@@ -11,11 +11,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.winxenchantixshop.Activity.AdminSeller.ConfirmActivity
 import com.example.winxenchantixshop.Activity.Product.EditProductActivity
+import com.example.winxenchantixshop.Activity.Product.OrderConfirmDetailActivity
 import com.example.winxenchantixshop.Activity.Product.ProductInformationActivity
 import com.example.winxenchantixshop.DTO.ItemNewOrder
 import com.example.winxenchantixshop.DTO.NoticeCustomer
 import com.example.winxenchantixshop.DTO.Product
+import com.example.winxenchantixshop.DTO.User
 import com.example.winxenchantixshop.R
+import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.NonDisposableHandle.parent
 
@@ -37,17 +40,23 @@ class NoticeCustomerAdapter(private val listItem : ArrayList<NoticeCustomer>) : 
             holder.cap.setTypeface(null, Typeface.BOLD)
         }
 
-//        holder.itemView.setOnClickListener(object :View.OnClickListener{
-//            override fun onClick(v:View?) {
-//                val activity = v!!.context as AppCompatActivity
-//                val intent = Intent(v.context, ConfirmActivity::class.java)
-//
-//                intent.putExtra("billID", holder.bill.text.toString())
-//
-//                activity.startActivity(intent)
-//
-//            }
-//        })
+        holder.itemView.setOnClickListener(object :View.OnClickListener{
+            override fun onClick(v:View?) {
+                val currentUser = User.Email("")!!.dropLast(10)
+                FirebaseDatabase.getInstance().getReference("Notification")
+                    .child(currentUser)
+                    .child(holder.billID.text.toString())
+                    .child("status")
+                    .setValue("seen")
+
+                val activity = v!!.context as AppCompatActivity
+                val intent = Intent(v.context, OrderConfirmDetailActivity::class.java)
+
+                intent.putExtra("billID", holder.billID.text.toString())
+
+                activity.startActivity(intent)
+            }
+        })
 
     }
 

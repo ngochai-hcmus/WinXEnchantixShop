@@ -76,6 +76,7 @@ class NotifyPageFragment : Fragment() {
         db_ref = FirebaseDatabase.getInstance().getReference("Notification").child(name)
         db_ref.addValueEventListener(object:ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+                listNotice.clear()
                 if (snapshot.exists()){
                     for (i in snapshot.children){
                         val notice = i.getValue(NoticeCustomer::class.java)
