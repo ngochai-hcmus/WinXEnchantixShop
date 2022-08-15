@@ -1,6 +1,7 @@
 package com.example.winxenchantixshop.Activity.Product
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -50,13 +51,13 @@ class NewOrderActivity : AppCompatActivity() {
                         if (trim == name) {
                             val item = i.child("ClientInfo").getValue(ClientInfo::class.java)
 
-                            val name = item!!.name
-                            val cost = item!!.Cost
-                            val date = item!!.Time
+                            val fname = item?.name
+                            val cost = item?.Cost
+                            val date = item?.Time
                             val bill = i.key.toString()
 
-                            val itemNew = ItemNewOrder(name, cost, date, bill)
-                            listItem.add(itemNew)
+                            val itemNew = ItemNewOrder(fname, cost, date, bill)
+                            listItem.add(0, itemNew)
                         }
                     }
                     itemRecyclerView.adapter = ItemNewOrderCustomerAdapter(listItem)
@@ -64,6 +65,7 @@ class NewOrderActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(applicationContext, "Not Existed", Toast.LENGTH_LONG).show()
             }
         })
     }
