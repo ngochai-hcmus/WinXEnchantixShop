@@ -56,12 +56,18 @@ class ProductInformationActivity : AppCompatActivity() {
         }
 
         binding.btnbuy.setOnClickListener {
-            val intent = Intent(this, OrderActivity::class.java)
-            val product = Product(imageUrl, productName, category, price, binding.number.text.toString(), description)
-            listProduct.clear()
-            listProduct.add(product)
-            intent.putExtra("listProduct", listProduct)
-            startActivity(intent)
+            if (binding.number.text.toString() != "0") {
+                val intent = Intent(this, OrderActivity::class.java)
+                val product = Product(imageUrl, productName, category, price, binding.number.text.toString(), description)
+                listProduct.clear()
+                listProduct.add(product)
+                intent.putExtra("listProduct", listProduct)
+                startActivity(intent)
+            }
+            else {
+                Toast.makeText(this, "Please choose quantity first", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         binding.btnaddcart.setOnClickListener {
