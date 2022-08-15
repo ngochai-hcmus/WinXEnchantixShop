@@ -118,6 +118,9 @@
         <activity
             android:name=".Activity.Product.BrandActivity"
             android:exported="false" />
+        <activity
+            android:name=".Activity.Product.DealActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

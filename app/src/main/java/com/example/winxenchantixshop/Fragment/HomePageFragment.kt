@@ -73,7 +73,7 @@ class HomePageFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(ProductView::class.java)
 
-        viewModel.allProducts.observe(viewLifecycleOwner, Observer {
+        viewModel.allUsers.observe(viewLifecycleOwner, Observer {
 
             productAdapter.updateProductList(it)
         })
