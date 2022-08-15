@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.winxenchantixshop.Activity.MainActivity
 import com.example.winxenchantixshop.Activity.Product.PostProductActivity
+import com.example.winxenchantixshop.DTO.User
 import com.example.winxenchantixshop.databinding.FragmentHomePageSellerBinding
 
 class Admin_seller_homeActivity : AppCompatActivity() {
@@ -15,6 +16,9 @@ class Admin_seller_homeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = FragmentHomePageSellerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val emailUser = intent.getStringExtra("EmailUser").toString()
+        User.Email(emailUser)
 
         binding.layoutMyproduct.setOnClickListener {
             val intent = Intent(this, MyProductActivity::class.java);
@@ -69,6 +73,14 @@ class Admin_seller_homeActivity : AppCompatActivity() {
         }
         binding.layoutListCustomer.setOnClickListener {
             val intent = Intent(this, ListCustomerActivity::class.java);
+            startActivity(intent)
+        }
+        binding.imgBtnConvert.setOnClickListener {
+            val intent = Intent(this, ConversionActivity::class.java);
+            startActivity(intent)
+        }
+        binding.imgBtnEditInfo.setOnClickListener {
+            val intent = Intent(this, EditProfileActivity::class.java);
             startActivity(intent)
         }
     }

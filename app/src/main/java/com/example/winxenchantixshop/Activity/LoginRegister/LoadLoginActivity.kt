@@ -35,7 +35,7 @@ class LoadLoginActivity : AppCompatActivity() {
             if(it.exists()){
                 Toast.makeText(this, "Login successful!!!", Toast.LENGTH_SHORT).show()
                 val type = it.child("type").value
-                Toast.makeText(this, type.toString(), Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, type.toString(), Toast.LENGTH_SHORT).show()
                 if (type.toString() == "customer")
                 {
                     Toast.makeText(this, "User is customer!!!", Toast.LENGTH_SHORT).show()
@@ -47,12 +47,14 @@ class LoadLoginActivity : AppCompatActivity() {
                 else if (type.toString() == "seller"){
                     Toast.makeText(this, "User is seller!!!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, Admin_seller_homeActivity::class.java);
+                    intent.putExtra("EmailUser",email.toString())
                     startActivity(intent)
                 }
                 else if (type.toString() == "admin")
                 {
                     Toast.makeText(this, "User is Admin!!!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, Admin_seller_homeActivity::class.java);
+                    intent.putExtra("EmailUser",email.toString())
                     startActivity(intent)
                 }
             }

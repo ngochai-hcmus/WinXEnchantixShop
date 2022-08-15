@@ -21,9 +21,6 @@ class ProductInformationActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_product_information)
-
         super.onCreate(savedInstanceState)
         binding = ActivityProductInformationBinding.inflate(layoutInflater)
         setContentView(binding.root)
