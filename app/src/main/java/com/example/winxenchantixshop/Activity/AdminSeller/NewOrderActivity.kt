@@ -41,6 +41,7 @@ class NewOrderActivity : AppCompatActivity() {
 
         db_ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                listItem.clear()
                 if (snapshot.exists()) {
                     for (i in snapshot.children) {
                         val item = i.child("ClientInfo").getValue(ClientInfo::class.java)
@@ -51,9 +52,14 @@ class NewOrderActivity : AppCompatActivity() {
                         val bill = i.key.toString()
 
                         val itemNew = ItemNewOrder(name, cost, date, bill)
-                        listItem.add(itemNew)
+                        listItem.add(0, itemNew)
 
                     }
+                    itemNewOrderRecyclerView.adapter?.notifyDataSetChanged()
+                    itemNewOrderRecyclerView.adapter = ItemNewOrderAdapter(listItem)
+
+                }
+                else {
                     itemNewOrderRecyclerView.adapter = ItemNewOrderAdapter(listItem)
                 }
 
@@ -64,6 +70,11 @@ class NewOrderActivity : AppCompatActivity() {
 
 
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        getItem()
     }
 
 }

@@ -52,7 +52,7 @@ class OrderConfirmActivity : AppCompatActivity() {
                             val bill = i.key.toString()
 
                             val itemNew = ItemNewOrder(name, cost, date, bill)
-                            listItem.add(itemNew)
+                            listItem.add(0, itemNew)
                         }
                     }
                     itemRecyclerView.adapter = ItemConfirmOrderAdapter(listItem)

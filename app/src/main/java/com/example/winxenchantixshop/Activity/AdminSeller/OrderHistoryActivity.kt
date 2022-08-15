@@ -50,7 +50,7 @@ class OrderHistoryActivity : AppCompatActivity() {
                         val date = item!!.Time
 
                         val itemNew = ItemNewOrder(name, cost, date, "")
-                        listItem.add(itemNew)
+                        listItem.add(0, itemNew)
 
                     }
                     itemHistoryOrderRecyclerView.adapter = ItemHistoryOrderAdapter(listItem)

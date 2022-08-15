@@ -80,7 +80,7 @@ class CartActivity : AppCompatActivity() {
                     binding.billCost.text = billCost.toString()
                 }
                 else{
-                    Toast.makeText(applicationContext, "No Item Yet", Toast.LENGTH_LONG).show()
+                    itemRecyclerView.adapter = ItemAdapter(listProduct)
                 }
             }
 
