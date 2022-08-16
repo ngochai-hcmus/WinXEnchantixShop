@@ -62,19 +62,6 @@
             android:backgroundTint="@color/grey"
             app:cardCornerRadius="20dp">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btn_add_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="130dp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/ic_add_image"
-                app:fabCustomSize="80dp"
-                app:maxImageSize="70dp"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck">
-
-            </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInput_review"
                 android:layout_width="wrap_content"

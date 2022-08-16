@@ -11,10 +11,6 @@
         android:title="@string/action_notice"
         android:icon="@drawable/ic_notification" />
     <item
-        android:id="@+id/chat"
-        android:title="@string/action_chat"
-        android:icon="@drawable/ic_chat" />
-    <item
         android:id="@+id/user"
         android:title="@string/action_user"
         android:icon="@drawable/ic_user" />

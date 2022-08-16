@@ -11,9 +11,8 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.winxenchantixshop.Adapter.ProductAdapter
 import com.example.winxenchantixshop.databinding.ActivityPostProductBinding
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
@@ -23,12 +22,15 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 import com.example.winxenchantixshop.DTO.Product
+import com.example.winxenchantixshop.DTO.UserInfor
+import com.google.firebase.database.*
 
 
 class PostProductActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityPostProductBinding
     private lateinit var database : DatabaseReference
+    private lateinit var listProduct: ArrayList<Product>
     lateinit var imageUri: Uri
 
     private val pickImage = 100
@@ -82,13 +84,12 @@ class PostProductActivity : AppCompatActivity() {
                 binding.textInputLayoutDescription.error = "*Require"
             }
 
+
             if(image != "" && productName.isNotEmpty()
                 && category.isNotEmpty() && price.isNotEmpty()
                 && amount.isNotEmpty() && description.isNotEmpty()){
                 uploadData()
             }
-
-
 
         }
 
@@ -146,6 +147,5 @@ class PostProductActivity : AppCompatActivity() {
         }
 
     }
-
 
 }
